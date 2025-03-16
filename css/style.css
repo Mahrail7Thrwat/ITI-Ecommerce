@@ -1,0 +1,26 @@
+/* start of font importing */
+@font-face {
+    font-family: 'Jost';
+    src: url('/fonts/Jost-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Jost';
+    src: url('/fonts/Jost-Medium.ttf') format('truetype');
+}
+
+
+@font-face {
+    font-family: 'Jost';
+    src: url('/fonts/Jost-SemiBold.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Jost';
+    src: url('/fonts/Jost-Bold.ttf') format('truetype');
+}
+/* end of font importing */
+
+body{
+    font-family: 'Jost', sans-serif;
+}
