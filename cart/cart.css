@@ -30,12 +30,12 @@ body{
 
 
 
-/* start of left side filters */
 .container{
     margin-top: 70px;
     display: flex;
     flex-direction: row;
 }
+/* start of left side filters */
 .left-section{
     display: flex;
     flex-direction: column;
@@ -101,7 +101,7 @@ body{
 .right-row-head{
 display: flex;
 flex-direction: row;
-gap: 300px;
+gap: 250px;
 font-size: 15px;
 justify-content: space-between; /* Equal spacing between columns */
 }
