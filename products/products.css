@@ -41,8 +41,6 @@ body{
     font-weight: 100 !important;
     padding-left: 20px;
     font-size: 15px;
-    /* background-image: url(/src/search.svg);
-    background-repeat: no-repeat; */
 }
 
 .search > input::placeholder{
@@ -74,7 +72,6 @@ body{
     width: 150px;
 
 }
-/* .filter select{} */
 .filter select option{
     background-color: #2BA149;
     border-radius: 15px;
@@ -138,6 +135,7 @@ body{
 }
 /* end of left side filters */
 
+/* start of right side */
 
 .right-section{
     width: 75%;
@@ -146,7 +144,6 @@ body{
     gap: 50px;
     /* background-color: #2BA149; */
 }
-/* start of right side */
 
 .row-1,.row-2,.row-3{
     display: flex;
@@ -179,7 +176,6 @@ body{
     padding-top: 5px;
 }
 .entire-prod-row2{
-    /* background-color: #2BA149; */
     margin-top: 10px;
     height: 350px;
     align-items: center;
