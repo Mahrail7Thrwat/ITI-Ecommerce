@@ -25,7 +25,7 @@ body{
 .list-title{
     font-size: 30px;
     font-family: 'Jost', sans-serif;
-    font-weight: 100 !important;
+    font-weight: 500 ;
 }
 /* end of the list head section */
 
@@ -107,11 +107,6 @@ body{
     color: #2BA149;
     border-radius: 8px;
     font-size: 18px;
-    align-items: center;
-    display: flex;
-    flex-direction: row;
-    gap: 15px;
-    padding-left: 25px;
     cursor: pointer;
 }
 .add-to-cart:hover{

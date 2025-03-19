@@ -1,75 +1,9 @@
 //////////////// start cart page////////////////////////////////
-
-// ******delete, add functions********************************
-let increase = document.querySelectorAll(".row-ele .fa-plus");
-let decrease = document.querySelectorAll(".row-ele .fa-minus");
-
-increase.forEach(
-  (plusIcon) =>
-    (plusIcon.onclick = function () {
-      let quantityContent =
-        this.closest(".quantity-btn").querySelector(".Quantity");
-      let quantitytoNum = Number(quantityContent.textContent);
-
-      quantitytoNum += 1;
-      quantityContent.textContent = quantitytoNum.toString().padStart(2, "0");
-    })
-);
-
-decrease.forEach(
-  (minusIcon) =>
-    (minusIcon.onclick = function () {
-      let quantityContent =
-        this.closest(".quantity-btn").querySelector(".Quantity");
-      let quantitytoNum = Number(quantityContent.textContent);
-      if (quantitytoNum > 1) {
-        quantitytoNum--;
-        quantityContent.textContent = quantitytoNum.toString().padStart(2, "0");
-      } else quantitytoNum = "0";
-    })
-);
-
-// *****************************calculations********************************
-
-// let quantityContent = this.closest(".quantity-btn").querySelector(".Quantity");
-
-// let quantity = document.querySelector(".Quantity");
-// let totalPrice = document.getElementById("total-price");
-// let quantitytoNum = Number(quantityContent.textContent);
-// let totalPriceContent = parseFloat(totalPrice.textContent.replace("$", ""));
-// totalPrice.textContent = `$${totalPriceContent * quantitytoNum}.00`;
-// console.log(totalPriceContent);
-
-////////////////calculations////////////////////////////////
-
-// function updateQuantity(action, button) {
-//   let quantityContent = button.closest(".quantity-btn").querySelector(".Quantity");
-//   let quantitytoNum = Number(quantityContent.textContent);
-//   let totalPrice = document.getElementById("total-price");
-//   let totalPriceContent = parseFloat(totalPrice.textContent.replace("$", ""));
-
-//   if (action === "increase" || (action === "decrease" && quantitytoNum > 1)) {
-//     quantitytoNum = action === "increase" ? quantitytoNum + 1 : quantitytoNum - 1;
-//     let unitPrice = totalPriceContent / quantitytoNum; // Approx unit price
-//     totalPrice.textContent = `$${unitPrice * quantitytoNum}.00`;
-//   }
-
-//   quantityContent.textContent = quantitytoNum.toString().padStart(2, "0");
-// }
-
-// document.addEventListener("DOMContentLoaded", () => {
-//   document.querySelectorAll('.increase').forEach(plusIcon => {
-//     plusIcon.onclick = function() { updateQuantity("increase", this); };
-//   });
-
-//   document.querySelectorAll('.decrease').forEach(minusIcon => {
-//     minusIcon.onclick = function() { updateQuantity("decrease", this); };
-//   });
-// });
-
 // ********************************add to cart functions********************************
+// calling all add to cart button in prodducts page and looping over them
 let addToCart = document.querySelectorAll(".add-to-cart").forEach((button) => {
   button.addEventListener("click", () => {
+    // calling Elements
     let productDiv = button.closest(".product");
     let name = productDiv.querySelector("h1").textContent;
     let subDesc = document.querySelector("h5").textContent;
@@ -77,34 +11,44 @@ let addToCart = document.querySelectorAll(".add-to-cart").forEach((button) => {
     let price = productDiv.querySelector("h2").childNodes[1].textContent.trim();
 
     let cartItems = JSON.parse(localStorage.getItem("cartItems")) || []; //ensures that if there is json has an elmnt called "cartItems" return it and if null it creates an empty array
-
     cartItems.push({ name, subDesc, imageSrc, price, quantity: "01" }); //pushes product details into cart json object created
-
     localStorage.setItem("cartItems", JSON.stringify(cartItems));
   });
 });
 
+// ensures that we are in the cart page
 if (window.location.pathname.includes("cart.html")) {
   let cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
 
+  // gets the container of all products
   let rightSection = document.querySelector(".right-section");
+
+  // gets the container's header
   let header = document.querySelector(".right-row-head");
 
+  // removes all elemnts in the cart page to replace thm with new elemnts
   document.querySelectorAll(".row-ele").forEach((row) => {
     row.remove();
   });
 
+  // removes all the divider elements in the page
   document.querySelectorAll(".divider").forEach((divider) => {
     divider.remove();
   });
+
+  // sets the counter of the cart Elements to be the length of the cartItems array
 
   document.querySelector(".cart-price").textContent = cartItems.length
     .toString()
     .padStart(2, "0");
 
-  cartItems.forEach((item, index) => {
+  cartItems.forEach((item) => {
+    // creates the div the will hold the new Elements
     let newRow = document.createElement("div");
+
+    // sets the new row with the same calss name of the past row to fill it with the new one
     newRow.className = "row-ele";
+
     newRow.innerHTML = `
                       <div class="details">
                           <span class="img"><img src="${item.imageSrc}" alt="" class="dynamic-image" ></span>
@@ -121,12 +65,16 @@ if (window.location.pathname.includes("cart.html")) {
 
                   </div>
             `;
+    // puts the Elements into the next section container
     rightSection.insertBefore(newRow, header.nextSibling.nextSibling);
+
+    // creates the new divider with the same class name of the prev one to inhirit its features
     let divider = document.createElement("hr");
     divider.className = "divider";
     rightSection.insertBefore(divider, newRow.nextSibling);
   });
 
+  // calculates the subtotal of the elemnts of cart rows
   let subtotal = cartItems.reduce((sum, item) => {
     return (
       sum + parseFloat(item.price.replace("$", "") * parseFloat(item.quantity))
@@ -136,6 +84,7 @@ if (window.location.pathname.includes("cart.html")) {
   document.querySelector(
     ".subtotals-title span"
   ).textContent = `$${subtotal}.00`;
+
   document.querySelector(
     ".subtotals-title:last-child span.title"
   ).textContent = `$${subtotal + 80 + 5 + 39}.00`;
@@ -146,6 +95,7 @@ if (window.location.pathname.includes("cart.html")) {
     let trashicon = row.querySelector(".fa-trash");
     let clearAll = document.querySelector(".clear");
 
+    // clears all Elements in the cart
     clearAll.onclick = function () {
       // let cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
       localStorage.clear();
@@ -163,6 +113,7 @@ if (window.location.pathname.includes("cart.html")) {
       });
     };
 
+    // increases new elemnt or itemCount
     plusIcon.onclick = function () {
       let quantityELement =
         this.closest(".quantity-btn").querySelector(".Quantity");
@@ -183,6 +134,7 @@ if (window.location.pathname.includes("cart.html")) {
       updateTotals();
     };
 
+    // decreases itemCount
     minusIcon.onclick = function () {
       let quantityELement =
         this.closest(".quantity-btn").querySelector(".Quantity");
@@ -205,6 +157,8 @@ if (window.location.pathname.includes("cart.html")) {
       updateTotals();
     };
 
+    // deletes elemnt from the cart
+
     trashicon.onclick = function () {
       let hr = row.nextSibling;
       hr.remove();
@@ -213,6 +167,7 @@ if (window.location.pathname.includes("cart.html")) {
       let cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
       cartItems.splice(index, 1);
       localStorage.setItem("cartItems", JSON.stringify(cartItems));
+
       document.querySelector(".cart-price").textContent = cartItems.length
         .toString()
         .padStart(2, "0");
@@ -220,13 +175,16 @@ if (window.location.pathname.includes("cart.html")) {
     };
   });
 
+  // updateTotals function
   function updateTotals() {
     let subtotal = 0;
+
     document.querySelectorAll(".row-ele").forEach((row) => {
       subtotal += parseFloat(
         row.querySelector(".price:nth-child(4)").textContent.replace("$", "")
       );
     });
+
     document.querySelector(
       ".subtotals-title span"
     ).textContent = `$${subtotal.toFixed(2)}`;
@@ -235,4 +193,5 @@ if (window.location.pathname.includes("cart.html")) {
     ).textContent = `$${(subtotal + 80 + 5 + 39).toFixed(2)}`;
   }
 }
+
 ////////////////end of cart page////////////////////////////////
