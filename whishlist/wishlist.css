@@ -79,16 +79,22 @@ body{
     margin-block-end: 0;
     white-space: nowrap;
 }
-
-/* end product details */
-
-
 .sub-details{
     display: flex;
     flex-direction: column;
     gap: 15px;
     margin-left: 10px;
 }
+
+
+.fa-trash{
+    cursor: pointer;
+    color: #EA0F16;
+    font-size: 30px;
+}
+/* end product details */
+
+
 
 /* add to cart button */
 .add-to-cart{

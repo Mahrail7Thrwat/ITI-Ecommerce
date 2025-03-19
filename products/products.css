@@ -55,22 +55,17 @@ body{
     margin-left: -2%;
     margin-top: 0.7%;
 }
-.search-icon img{
-    width: 21px;
-    cursor: pointer;
-}
+
 
 .filter select{
-    position: relative;
     border: 2px solid #2BA149;
     border-radius: 5px;
     height: 40px;
-    padding: 5px 5px;
-    padding-right: 15px;
+    padding: 0px 10px;
     font-family: 'Jost', sans-serif;
+    font-size: 15px;
     cursor: pointer;
-    width: 150px;
-
+    width: 45%;
 }
 .filter select option{
     background-color: #2BA149;
@@ -78,6 +73,8 @@ body{
     border: none;
     color: white;
     cursor: pointer;
+    padding: 55px;
+
 }
 /* end of the filters section */
 
@@ -163,6 +160,18 @@ body{
 .product:hover{
     background-color: #82c3413b;
     transition: 0.5s;
+}
+
+
+.last-row .fa-heart,.fa-eye-slash{
+    font-size: 30px;
+    color: #82C341;
+    cursor: pointer;
+} 
+
+.love .fa-heart:hover,.fa-eye-slash:hover{
+color: #2BA149;
+transition: 0.5s;
 }
 
 .entire-prod-row1{

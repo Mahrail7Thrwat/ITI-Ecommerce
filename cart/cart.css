@@ -1,9 +1,7 @@
 body{
-
     padding: 0;
     margin-left: 80px;
     margin-right: 80px;
-
     font-family: 'Jost', sans-serif;
 }
 /* start of the cart head section */
@@ -27,8 +25,6 @@ body{
 }
 
 /* end of the cart head section */
-
-
 
 .container{
     margin-top: 70px;
@@ -127,6 +123,11 @@ justify-content: space-between; /* Equal spacing between columns */
     gap: 15px;
     margin-left: 10px;
 }
+.dynamic-image{
+ width: 120px;
+ height: 120px;
+ object-fit: fill;   
+}
 
 .quantity-btn{
     background-color: white;
@@ -145,7 +146,25 @@ justify-content: space-between; /* Equal spacing between columns */
     padding-left: 40px;
     cursor: pointer;
 }
+.price{
+    font-size: 25px;
+    font-weight: 500;
+}
+.fa-trash{
+    cursor: pointer;
+    color: #EA0F16;
+    font-size: 30px;
+}
+.h2{
+    font-size: 23px;
+    font-weight: 600;
+}
 
+.fa-minus,.fa-plus{
+    font-size:20px;
+    color: #82C341;
+    cursor: pointer;
+}
 .divider{
     border: 1px solid #2BA149;
     margin: 15px 0;
