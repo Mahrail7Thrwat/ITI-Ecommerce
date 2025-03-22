@@ -1,0 +1,206 @@
+body{
+    padding: 0;
+    margin-left: 80px;
+    margin-right: 80px;
+    font-family: 'Jost', sans-serif;
+}
+/* start of the cart head section */
+.first-row{
+    background-color: #82c34117;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 5px;
+    height: 70px;
+    border-radius: 15px;
+    align-items: center;
+    padding-left:20px;
+}
+
+.cart-title{
+    font-size: 25px;
+    font-family: 'Jost', sans-serif;
+    font-weight: 100 !important;
+}
+
+/* end of the cart head section */
+
+.container{
+    margin-top: 70px;
+    display: flex;
+    flex-direction: row;
+}
+/* start of left side filters */
+.left-section{
+    display: flex;
+    flex-direction: column;
+    width: 25%;
+    gap: 40px;
+}
+
+.first-row-totals{
+    background-color: #EBF5F4;
+    width: 280px;
+    border-radius: 15px;
+    padding-left: 35px;
+    padding-top: 2px;
+    padding-bottom: 5px;
+    height: 410px;
+}
+
+.subtotals-title{
+    font-size: 25px;
+    font-weight: 500;
+}
+
+.totals-both-coloumns{
+    flex-direction: column;
+    gap: 20px;
+}
+.elements{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.rightcouloumn{
+    display: flex;
+    flex-direction: column;
+}
+
+.btn-proceed{
+    background-color: #2BA149;
+    border: 2px ;
+    height: 58px;
+    width: 260px;
+    font-family: 'jost';
+    font-weight: 500;
+    color: white;
+    border-radius: 8px;
+    font-size: 18px;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+    padding-left: 25px;
+    cursor: pointer;
+}
+
+/* end of left side price cart */
+
+/* start of right section */
+.right-section{
+    display: flex;
+    flex-direction: column;
+}
+.right-row-head{
+display: flex;
+flex-direction: row;
+gap: 250px;
+font-size: 15px;
+justify-content: space-between; /* Equal spacing between columns */
+}
+
+.row-ele{
+    margin-top: 35px;
+    display: flex;
+    flex-direction:row;
+    justify-content: flex-start;
+    align-items: center;
+    justify-content: space-between; /* Equal spacing between columns */
+    /* gap: 150px; */
+}
+.details{
+    display: flex;
+    flex-direction: row;
+    gap: 2px;
+}
+
+.sub-details{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-left: 10px;
+}
+.dynamic-image{
+ width: 120px;
+ height: 120px;
+ object-fit: fill;   
+}
+
+.quantity-btn{
+    background-color: white;
+    border: 2px  solid #2BA149;
+    height: 58px;
+    width: 200px;
+    font-family: 'jost';
+    font-weight: 500;
+    color: #2BA149;
+    border-radius: 8px;
+    font-size: 18px;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    gap: 35px;
+    padding-left: 40px;
+    cursor: pointer;
+}
+.price{
+    font-size: 25px;
+    font-weight: 500;
+}
+.fa-trash{
+    cursor: pointer;
+    color: #EA0F16;
+    font-size: 30px;
+}
+.h2{
+    font-size: 23px;
+    font-weight: 600;
+}
+
+.fa-minus,.fa-plus{
+    font-size:20px;
+    color: #82C341;
+    cursor: pointer;
+}
+.divider{
+    border: 1px solid #2BA149;
+    margin: 15px 0;
+}
+
+/* last two buttons */
+
+.buttons-both{
+    margin-top: 100px;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    margin-bottom: 80px;
+}
+
+.buttons-both button{
+    height: 58px;
+    width: 280px;
+    font-family: 'jost';
+    font-weight: 500;
+    color: white;
+    border-radius: 8px;
+    font-size: 18px;
+    text-align: center;
+    align-items: center;
+    cursor: pointer;
+    border: none;
+}
+
+.clear{
+    background-color: black; width: 220px;
+}
+.clear:hover{
+background-color: rgb(224, 22, 22);
+transition: 0.5s;
+}
+/* last two buttons */
+
+/* end of right side cart */

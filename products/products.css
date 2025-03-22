@@ -1,0 +1,230 @@
+body{
+
+    padding: 0;
+    margin-left: 80px;
+    margin-right: 80px;
+
+    font-family: 'Jost', sans-serif;
+}
+/* start of the filters section */
+.first-row{
+    background-color: #82c34117;
+    width: 100%;
+    display: flex;
+    flex-direction: raw;
+    flex-wrap: nowrap;
+    gap: 5px;
+    height: 70px;
+    border-radius: 15px;
+    align-items: center;
+    padding-left:20px;
+}
+
+.filter-title{
+    font-size: 15px;
+    font-family: 'Jost', sans-serif;
+    font-weight: 100 !important;
+    width: 25%;
+}
+.search{
+    width: 50%;
+}
+.search > input{
+    background-color: white;
+    border: none;
+    padding: 7px;
+    height: 30px;
+    width: 500px;
+    border-radius: 5px;
+    color: #9CA2A7;
+    font-family: 'Jost', sans-serif;
+    font-weight: 100 !important;
+    padding-left: 20px;
+    font-size: 15px;
+}
+
+.search > input::placeholder{
+    color:#9CA2A7 ;
+}
+
+.filter{
+    width: 25%;
+}
+.search-icon a{
+    position: absolute;
+    margin-left: -2%;
+    margin-top: 0.7%;
+}
+
+
+.filter select{
+    border: 2px solid #2BA149;
+    border-radius: 5px;
+    height: 40px;
+    padding: 0px 10px;
+    font-family: 'Jost', sans-serif;
+    font-size: 15px;
+    cursor: pointer;
+    width: 45%;
+}
+.filter select option{
+    background-color: #2BA149;
+    border-radius: 15px;
+    border: none;
+    color: white;
+    cursor: pointer;
+    padding: 55px;
+
+}
+/* end of the filters section */
+
+/* start of left side filters */
+.container{
+    margin-top: 70px;
+    display: flex;
+    flex-direction: row;
+}
+.left-section{
+    display: flex;
+    flex-direction: column;
+    width: 25%;
+    gap: 40px;
+}
+
+.first-row-cat{
+    background-color: #EBF5F4;
+    width: 280px;
+    border-radius: 15px;
+    padding-left: 35px;
+    padding-top: 2px;
+    padding-bottom: 5px;
+}
+
+.second-row-price{
+    background-color: #EBF5F4;
+    width: 280px;
+    border-radius: 15px;
+    padding-left: 35px;
+    padding-top: 2px;
+    padding-bottom: 25px;
+}
+.range input[type="range"]{
+    -webkit-appearance: none;
+    appearance: none;
+    border-radius: 15px;
+    height: 7px;
+    width: 200px;
+    background: linear-gradient(-90deg,#ADFB5F,#2BA149);
+    outline: navajowhite;
+}
+
+.range input[type="range"]::-webkit-slider-thumb{
+    border: 2px solid #2BA149;
+    background: white;
+    -webbkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 15px;
+
+
+    outline: navajowhite;
+}
+/* end of left side filters */
+
+/* start of right side */
+
+.right-section{
+    width: 75%;
+    display: flex;
+    flex-direction:column;
+    gap: 50px;
+    /* background-color: #2BA149; */
+}
+
+.row-1,.row-2,.row-3{
+    display: flex;
+    flex-direction: row;
+    gap: 80px;
+}
+.product{
+    background-color: rgba(247, 247, 247, 40%);
+    width: 400px;
+    height: 690px;
+    border-radius: 15px;
+    border: 1px solid #82C341;
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+}
+.product:hover{
+    background-color: #82c3413b;
+    transition: 0.5s;
+}
+
+
+.last-row .fa-heart,.fa-eye-slash{
+    font-size: 30px;
+    color: #82C341;
+    cursor: pointer;
+} 
+
+.love .fa-heart:hover,.fa-eye-slash:hover{
+color: #2BA149;
+transition: 0.5s;
+}
+
+.entire-prod-row1{
+    width: 131px;
+    height: 30px;
+    border-radius: 0px 8px 8px 0px;
+    background-color: #68727A;
+    margin-top: 40px;
+    color: white;
+    text-align: center;
+    padding-top: 5px;
+}
+.entire-prod-row2{
+    margin-top: 10px;
+    height: 350px;
+    align-items: center;
+    width: 220px;
+    align-self: center;
+}
+.image-product img{
+    width: 218px;
+    height: 350;
+}
+
+.entire-prod-row3{
+    margin-left: 35px;
+    margin-right: 5px;
+}
+.add-to-cart{
+    background-color: white;
+    border: 2px solid #82C341;
+    height: 58px;
+    width: 217px;
+    font-family: 'jost';
+    font-weight: 600;
+    color: #2BA149;
+    border-radius: 8px;
+    font-size: 18px;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+    padding-left: 25px;
+    cursor: pointer;
+}
+.add-to-cart:hover{
+    background-color: #82C341;
+    transition: 0.5s;
+}
+
+.last-row{
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+/* end of right side */
