@@ -129,4 +129,36 @@ body{
     align-self: center;
 }
 
+/* last two buttons */
+
+.buttons-both{
+    margin-top: 100px;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    margin-bottom: 80px;
+}
+
+.buttons-both button{
+    height: 58px;
+    width: 280px;
+    font-family: 'jost';
+    font-weight: 500;
+    color: white;
+    border-radius: 8px;
+    font-size: 18px;
+    text-align: center;
+    align-items: center;
+    cursor: pointer;
+    border: none;
+}
+
+.clear{
+    background-color: black; width: 220px;
+}
+.clear:hover{
+background-color: rgb(224, 22, 22);
+transition: 0.5s;
+}
+/* last two buttons */
 /* end of center side cart */

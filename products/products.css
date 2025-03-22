@@ -3,7 +3,6 @@ body{
     padding: 0;
     margin-left: 80px;
     margin-right: 80px;
-
     font-family: 'Jost', sans-serif;
 }
 /* start of the filters section */
@@ -26,30 +25,32 @@ body{
     font-weight: 100 !important;
     width: 25%;
 }
-.search{
-    width: 50%;
-}
+
 .search > input{
     background-color: white;
     border: none;
     padding: 7px;
-    height: 30px;
-    width: 500px;
+    height: 40px;
+    width: 800px;
     border-radius: 5px;
     color: #9CA2A7;
     font-family: 'Jost', sans-serif;
     font-weight: 100 !important;
-    padding-left: 20px;
+    padding-left: 15px;
     font-size: 15px;
 }
 
 .search > input::placeholder{
-    color:#9CA2A7 ;
+    color:#727574 ;
+    font-size: 16px;
 }
+.search > input:focus{
+    outline: 2px solid #2BA149;
 
-.filter{
-    width: 25%;
 }
+/* .filter{
+    width: 25%;
+} */
 .search-icon a{
     position: absolute;
     margin-left: -2%;
@@ -76,6 +77,32 @@ body{
     padding: 55px;
 
 }
+
+
+.countCart{
+    background-color: #2BA149;
+    color: white;
+    width: 28px;
+    height: 28px;
+    text-align: center;
+    border-radius: 50%;
+    font-size: 15px;
+    padding: 0;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.iconCart{
+    cursor: pointer;
+}
+.countCart{
+    position: absolute;
+    margin-left: 15px;
+    margin-top: -25px;
+    }
 /* end of the filters section */
 
 /* start of left side filters */
