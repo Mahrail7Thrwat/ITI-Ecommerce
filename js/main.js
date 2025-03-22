@@ -392,7 +392,7 @@ if (window.location.pathname.includes("wishlist.html")) {
 function search() {
   let searchboxVal = document.getElementById("searchBox").value.toUpperCase();
   let products = document.querySelectorAll(".product");
-  for (i = 0; i < products.length; i++) {
+  for (let i = 0; i < products.length; i++) {
     let pname = products[i].getElementsByTagName("h1")[0];
     if (pname) {
       let pnameValue = pname.textContent;
