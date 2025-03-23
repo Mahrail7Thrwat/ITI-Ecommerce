@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ITI task-products</title>
+    <title>Shop</title>
     <link rel="icon" href="img/16x16.png" type="image/x-icon">
     <link rel="stylesheet" href="/css/all.min.css">
     <link rel="stylesheet" href="products.css">
@@ -88,18 +88,19 @@
             <div class="first-row-cat">
                 <div class="categories-1">
                     <h3 style="position: relative;">Product Categories</h3>
+                    <p><button class="filter-cat" id="all" style="width: 100px;">All </button></p>
                     <h5> Premium Scrubs Lab Coats</h5>
                         <div class="all-categ"> 
-                            <p><input type="checkbox" >Male Scrubs <span class="quantity" style="margin-left:35%;"> 15 </span></p>
-                            <p><input type="checkbox"> Female Scrubs <span class="quantity" style="margin-left:29%;"> 25 </span></p>
-                            <p><input type="checkbox"> Male Lab coats <span class="quantity" style="margin-left:28%;"> 42 </span></p>
-                            <p><input type="checkbox"> Female Lab coats <span class="quantity" style="margin-left:23%;" > 16 </span></p>
+                            <p><button class="filter-cat" id="male-scrub">Male Scrubs </button><span class="quantity" style="margin-left:35%;"> 2 </span></p>
+                            <p><button class="filter-cat" id="female-scrub"> Female Scrubs</button> <span class="quantity" style="margin-left:29%;"> 1 </span></p>
+                            <p><button class="filter-cat" id="male-labcoat"> Male Lab coats </button><span class="quantity" style="margin-left:28%;"> 2 </span></p>
+                            <p><button class="filter-cat" id="female-labcoat"> Female Lab coats </button><span class="quantity" style="margin-left:23%;" > 1 </span></p>
                         </div>
                 </div>
                 <div class="categories-2">
                     <h5>Medical Supplies</h5>
                     <div class="all-categ"> 
-                    <p><input type="checkbox"> Medical Supplies <span class="quantity" style="margin-left:22%;"> 55 </span></p>       
+                    <p><button class="filter-cat" id="medical-subs"> Medical Supplies </button><span class="quantity" style="margin-left:22%;"> 3 </span></p>       
                 </div>
                 </div>
             </div>
@@ -123,7 +124,7 @@
             <!-- first row -->
             <div class="row-1" id="row">
                 
-                <div class="product">
+                <div class="product all male-labcoat">
                     <div class="entire-prod-row1">20 % off</div>
                     <div class="entire-prod-row2">
                         <div class="image-product">
@@ -141,15 +142,15 @@
                     </div>
                 </div>
 
-                <div class="product">
+                <div class="product all female-scrub">
                     <div class="entire-prod-row1" style="background-color: #82C341;">New</div>
                     <div class="entire-prod-row2">
                         <div class="image-product">
-                            <img src="/src/image.png" alt="">
+                            <img src="/src/female scrub.png" alt="">
                         </div>
                     </div>
                     <div class="entire-prod-row3">
-                        <h1 style="font-size: 25px;">Mustwear Pro-Active Female Labcoat </h1>
+                        <h1 style="font-size: 25px;">Mustwear Pro-Active Female Scrub </h1>
                         <h2><span style="color: #555555; text-decoration: line-through;">$62.00</span> $42.00</h2>
                         <div class="last-row">
                             <div class="love"><a><i class="fa-solid fa-eye-slash"></i></a></div>
@@ -159,7 +160,7 @@
                     </div>
                 </div>
 
-                <div class="product">
+                <div class="product all male-scrub">
                     <div class="entire-prod-row1" style="background-color: #CB2009;">80 % off</div>
                     <div class="entire-prod-row2">
                         <div class="image-product">
@@ -167,7 +168,7 @@
                         </div>
                     </div>
                     <div class="entire-prod-row3">
-                        <h1 style="font-size: 25px;">ProShield Banded Lab Coat for men</h1>
+                        <h1 style="font-size: 25px;">ProShield Banded Scrub For Men</h1>
                         <h2><span style="color: #555555; text-decoration: line-through;">$62.00</span> $42.00</h2>
                         <div class="last-row">
                             <div class="love"><a><i class="fa-solid fa-eye-slash"></i></a></div>
@@ -182,7 +183,7 @@
             <!-- second row -->
 
             <div class="row-2" id="row">
-                <div class="product">
+                <div class="product all medical-subs">
                     <div class="entire-prod-row1">20 % off</div>
                     <div class="entire-prod-row2">
                         <div class="image-product">
@@ -199,7 +200,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="product">
+                <div class="product all medical-subs">
                     <div class="entire-prod-row1" style="background-color: #82C341;">New</div>
                     <div class="entire-prod-row2">
                         <div class="image-product">
@@ -217,7 +218,7 @@
                     </div>
                 </div>
 
-                <div class="product">
+                <div class="product all medical-subs">
                     <div class="entire-prod-row1" style="background-color: #CB2009;">80 % off</div>
                     <div class="entire-prod-row2">
                         <div class="image-product">
@@ -240,7 +241,7 @@
             <!-- third row -->
 
             <div class="row-3" id="row">
-                <div class="product">
+                <div class="product all female-labcoat      ">
                     <div class="entire-prod-row1">20 % off</div>
                     <div class="entire-prod-row2">
                         <div class="image-product">
@@ -258,7 +259,7 @@
                     </div>
                 </div>
 
-                <div class="product">
+                <div class="product all male-scrub">
                     <div class="entire-prod-row1" style="background-color: #82C341;">New</div>
                     <div class="entire-prod-row2">
                         <div class="image-product">
@@ -276,7 +277,7 @@
                     </div>
                 </div>
 
-                <div class="product">
+                <div class="product all male-labcoat  ">
                     <div class="entire-prod-row1" style="background-color: #CB2009;">80 % off</div>
                     <div class="entire-prod-row2">
                         <div class="image-product">

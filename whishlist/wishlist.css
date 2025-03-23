@@ -2,6 +2,7 @@ body{
     padding: 0;
     margin-left: 80px;
     margin-right: 80px;
+    margin-top: 0;
     font-family: 'Jost', sans-serif;
     display: flex;
     flex-direction: column;
@@ -124,6 +125,7 @@ body{
     padding: 50px;
     border-radius: 15px;
     border: 2px solid #2BA149;
+    margin-bottom: 50px;
 }
 
 .center-section{
@@ -203,9 +205,6 @@ body{
 /*  end add to cart button */
 
 
-.buttons-both{
-    margin-bottom: 150px;
-}
 
 .divider{
     border: 1px solid #2BA149;
@@ -221,7 +220,7 @@ body{
     display: flex;
     flex-direction: row;
     gap: 10px;
-    margin-bottom: 80px;
+    /* margin-bottom: 80px; */
 }
 
 .buttons-both button{
@@ -254,6 +253,7 @@ transition: 0.5s;
     padding: 20px 0;
     text-align: center;
     border-radius: 10px;
+    width: 100%;
   }
   .footer-container {
     width: 90%;

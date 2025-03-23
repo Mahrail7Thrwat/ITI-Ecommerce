@@ -2,6 +2,7 @@ body{
     padding: 0;
     margin-left: 80px;
     margin-right: 80px;
+    margin-top: 0;
     font-family: 'Jost', sans-serif;
 }
 
@@ -188,7 +189,19 @@ body{
     padding-top: 2px;
     padding-bottom: 5px;
 }
-
+.filter-cat{
+    background-color: white;
+    border: 1px solid #2BA149;
+    padding: 10px;
+    border-radius: 10px;
+    color:#2BA149;
+    font-weight: 500;
+    cursor: pointer;
+}
+.active{
+    background-color: #2BA149;
+    color: white;
+}
 .second-row-price{
     background-color: #EBF5F4;
     width: 280px;

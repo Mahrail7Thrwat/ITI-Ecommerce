@@ -2,6 +2,7 @@ body{
     padding: 0;
     margin-left: 80px;
     margin-right: 80px;
+    margin-top: 0;
     font-family: 'Jost', sans-serif;
 }
 /* Nav-section */
@@ -115,6 +116,7 @@ body{
     margin-top: 70px;
     display: flex;
     flex-direction: row;
+    margin-bottom: 50px;
 }
 /* start of left side filters */
 .left-section{

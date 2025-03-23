@@ -406,19 +406,30 @@ function search() {
 search();
 ////////////////////////////////////////////////search function////////////////////////////////
 
-////////////cart count////////////////////////////////
-
-let CartAdd = document.querySelector(".CartAdd");
-
-function pluscart() {
-  let countCart = document.querySelector(".countCart");
-  let countCarNum = Number(countCart.textContent);
-  countCarNum++;
-  countCart.textContent = countCarNum;
+/////////////////////////start of filter using category function////////////////////////////////
+let productsFilter = document.querySelectorAll(".product");
+let buttonsFilter = document.querySelectorAll(".filter-cat");
+buttonsFilter.forEach((btn) => {
+  btn.addEventListener("click", () => {
+    showElements(btn);
+  });
+});
+// window.addEventListener("DomContentLoaded", () => {
+buttonsFilter[0].classList.add("active");
+// });
+function showElements(btn) {
+  productsFilter.forEach((item) => {
+    if (item.classList.contains(btn.id)) {
+      resetActivebutton(btn);
+      btn.classList.add("active");
+      item.style.display = "block";
+    } else item.style.display = "none";
+  });
 }
 
-// pluscart();
-
-// let countCart = document.querySelector(".countCart");
-// let countCarNum = Number(countCart.textContent);
-// countCarNum++;
+function resetActivebutton(btn) {
+  buttonsFilter.forEach((btn) => {
+    btn.classList.remove("active");
+  });
+}
+console.log(buttonsFilter[0].classList);
