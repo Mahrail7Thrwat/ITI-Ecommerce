@@ -1,11 +1,72 @@
 body{
-
     padding: 0;
     margin-left: 80px;
     margin-right: 80px;
-
+    margin-top: 0;
     font-family: 'Jost', sans-serif;
 }
+
+/* Nav-section */
+
+.nav {
+    background-color: #2BA149;
+    color: white;
+    padding: 20px 0px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 50px;
+    width: 100%;
+}
+.logo {
+    width: 10%;
+}
+  
+.logo img {
+  width: 100%;
+}
+.nav ul {
+    list-style: none;
+    display: flex;
+}
+  .nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 0 20px;
+    padding-bottom: 10px;
+    position: relative;
+}
+.nav ul li a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 100%;
+    height: 2px;
+    background-color: #fff;
+    transform: scaleX(0);
+    transition: transform 0.3s ease-in-out;
+}
+.nav ul li a:hover {
+    transition: transform 0.3s ease-in-out;
+}
+.nav ul li a:hover::after {
+    transform: scaleX(1);
+}
+.nav-icons img {
+    width: 30%;
+}
+
+.nav-icons ul li a {
+    padding: 0 10px;
+    transform: none;
+}
+  
+.nav-icons ul li a::after {
+    background-color: transparent;
+}
+
 /* start of the filters section */
 .first-row{
     background-color: #82c34117;
@@ -23,33 +84,34 @@ body{
 .filter-title{
     font-size: 15px;
     font-family: 'Jost', sans-serif;
-    font-weight: 100 !important;
+    /* font-weight: 100 !important; */
     width: 25%;
 }
-.search{
-    width: 50%;
-}
+
 .search > input{
     background-color: white;
     border: none;
     padding: 7px;
-    height: 30px;
-    width: 500px;
+    height: 40px;
+    width: 800px;
     border-radius: 5px;
     color: #9CA2A7;
     font-family: 'Jost', sans-serif;
-    font-weight: 100 !important;
-    padding-left: 20px;
+    padding-left: 15px;
     font-size: 15px;
 }
 
 .search > input::placeholder{
-    color:#9CA2A7 ;
+    color:#727574 ;
+    font-size: 16px;
 }
+.search > input:focus{
+    outline: 2px solid #2BA149;
 
-.filter{
-    width: 25%;
 }
+/* .filter{
+    width: 25%;
+} */
 .search-icon a{
     position: absolute;
     margin-left: -2%;
@@ -76,6 +138,32 @@ body{
     padding: 55px;
 
 }
+
+
+.countCart{
+    background-color: #ffbb00;
+    color: white;
+    width: 18px;
+    height: 18px;
+    text-align: center;
+    border-radius: 50%;
+    font-size: 13px;
+    padding: 0;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.iconCart{
+    cursor: pointer;
+}
+.countCart{
+    position: absolute;
+    margin-left: 18px;
+    margin-top: -20px;
+    }
 /* end of the filters section */
 
 /* start of left side filters */
@@ -83,6 +171,8 @@ body{
     margin-top: 70px;
     display: flex;
     flex-direction: row;
+    margin-bottom: 50px;
+
 }
 .left-section{
     display: flex;
@@ -99,7 +189,19 @@ body{
     padding-top: 2px;
     padding-bottom: 5px;
 }
-
+.filter-cat{
+    background-color: white;
+    border: 1px solid #2BA149;
+    padding: 10px;
+    border-radius: 10px;
+    color:#2BA149;
+    font-weight: 500;
+    cursor: pointer;
+}
+.active{
+    background-color: #2BA149;
+    color: white;
+}
 .second-row-price{
     background-color: #EBF5F4;
     width: 280px;
@@ -228,3 +330,63 @@ transition: 0.5s;
     align-items: center;
 }
 /* end of right side */
+
+/* footer section */
+.footer {
+    background-color: #000;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+    border-radius: 10px;
+  }
+  .footer-container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+  }
+  .footer-top {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding-bottom: 20px;
+  }
+  .footer-section {
+    flex: 1;
+    min-width: 200px;
+    margin: 10px;
+  }
+  .footer-section h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  .footer-section ul {
+    list-style: none;
+    padding: 0;
+  }
+  .footer-section ul li {
+    margin: 5px 0;
+  }
+  .footer-section ul li a {
+    color: #bbb;
+    text-decoration: none;
+  }
+  .footer-section ul li a:hover {
+    color: #fff;
+  }
+  .payment-icons {
+    display: flex;
+    justify-content: center;
+  }
+  .payment-icons img {
+    width: 60px;
+    margin: 5px;
+    transition: transform 0.3s;
+  }
+  .payment-icons img:hover {
+    transform: scale(1.1);
+  }
+  .footer-bottom {
+    border-top: 1px solid #444;
+    padding-top: 10px;
+    font-size: 14px;
+  }

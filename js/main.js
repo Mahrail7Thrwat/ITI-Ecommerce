@@ -21,77 +21,14 @@ function typeWriter() {
 }
 window.onload = typeWriter;
 //////////////// start cart page////////////////////////////////
-
-// ******delete, add functions********************************
-let increase = document.querySelectorAll(".row-ele .fa-plus");
-let decrease = document.querySelectorAll(".row-ele .fa-minus");
-
-increase.forEach(
-  (plusIcon) =>
-    (plusIcon.onclick = function () {
-      let quantityContent =
-        this.closest(".quantity-btn").querySelector(".Quantity");
-      let quantitytoNum = Number(quantityContent.textContent);
-
-      quantitytoNum += 1;
-      quantityContent.textContent = quantitytoNum.toString().padStart(2, "0");
-    })
-);
-
-decrease.forEach(
-  (minusIcon) =>
-    (minusIcon.onclick = function () {
-      let quantityContent =
-        this.closest(".quantity-btn").querySelector(".Quantity");
-      let quantitytoNum = Number(quantityContent.textContent);
-      if (quantitytoNum > 1) {
-        quantitytoNum--;
-        quantityContent.textContent = quantitytoNum.toString().padStart(2, "0");
-      } else quantitytoNum = "0";
-    })
-);
-
-// *****************************calculations********************************
-
-// let quantityContent = this.closest(".quantity-btn").querySelector(".Quantity");
-
-// let quantity = document.querySelector(".Quantity");
-// let totalPrice = document.getElementById("total-price");
-// let quantitytoNum = Number(quantityContent.textContent);
-// let totalPriceContent = parseFloat(totalPrice.textContent.replace("$", ""));
-// totalPrice.textContent = `$${totalPriceContent * quantitytoNum}.00`;
-// console.log(totalPriceContent);
-
-////////////////calculations////////////////////////////////
-
-// function updateQuantity(action, button) {
-//   let quantityContent = button.closest(".quantity-btn").querySelector(".Quantity");
-//   let quantitytoNum = Number(quantityContent.textContent);
-//   let totalPrice = document.getElementById("total-price");
-//   let totalPriceContent = parseFloat(totalPrice.textContent.replace("$", ""));
-
-//   if (action === "increase" || (action === "decrease" && quantitytoNum > 1)) {
-//     quantitytoNum = action === "increase" ? quantitytoNum + 1 : quantitytoNum - 1;
-//     let unitPrice = totalPriceContent / quantitytoNum; // Approx unit price
-//     totalPrice.textContent = `$${unitPrice * quantitytoNum}.00`;
-//   }
-
-//   quantityContent.textContent = quantitytoNum.toString().padStart(2, "0");
-// }
-
-// document.addEventListener("DOMContentLoaded", () => {
-//   document.querySelectorAll('.increase').forEach(plusIcon => {
-//     plusIcon.onclick = function() { updateQuantity("increase", this); };
-//   });
-
-//   document.querySelectorAll('.decrease').forEach(minusIcon => {
-//     minusIcon.onclick = function() { updateQuantity("decrease", this); };
-//   });
-// });
-
 // ********************************add to cart functions********************************
+// calling all add to cart button in prodducts page and looping over them
+
+updateCartCount();
+
 let addToCart = document.querySelectorAll(".add-to-cart").forEach((button) => {
   button.addEventListener("click", () => {
+    // calling Elements
     let productDiv = button.closest(".product");
     let name = productDiv.querySelector("h1").textContent;
     let subDesc = document.querySelector("h5").textContent;
@@ -99,34 +36,64 @@ let addToCart = document.querySelectorAll(".add-to-cart").forEach((button) => {
     let price = productDiv.querySelector("h2").childNodes[1].textContent.trim();
 
     let cartItems = JSON.parse(localStorage.getItem("cartItems")) || []; //ensures that if there is json has an elmnt called "cartItems" return it and if null it creates an empty array
-
     cartItems.push({ name, subDesc, imageSrc, price, quantity: "01" }); //pushes product details into cart json object created
-
     localStorage.setItem("cartItems", JSON.stringify(cartItems));
+
+    updateCartCount();
   });
 });
 
+function updateCartCount() {
+  let cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
+  let countCart = document.querySelector(".countCart");
+  if (countCart) {
+    countCart.textContent = cartItems.length;
+  }
+}
+// add to cart in navar function
+// ensures that we are in the cart page
 if (window.location.pathname.includes("cart.html")) {
   let cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
 
+  // gets the container of all products
   let rightSection = document.querySelector(".right-section");
+
+  let bothbuttons = document.querySelector(".buttons-both");
+
+  // gets the container's header
   let header = document.querySelector(".right-row-head");
 
+  // if the cart is empty
+  if (cartItems.length === 0) {
+    console.log("ur cart is empty");
+    header.textContent = "Your cart is Empty";
+    header.style.fontSize = "50px";
+    bothbuttons.style.display = "none";
+  }
+
+  // removes all elemnts in the cart page to replace thm with new elemnts
   document.querySelectorAll(".row-ele").forEach((row) => {
     row.remove();
   });
 
+  // removes all the divider elements in the page
   document.querySelectorAll(".divider").forEach((divider) => {
     divider.remove();
   });
+
+  // sets the counter of the cart Elements to be the length of the cartItems array
 
   document.querySelector(".cart-price").textContent = cartItems.length
     .toString()
     .padStart(2, "0");
 
-  cartItems.forEach((item, index) => {
+  cartItems.forEach((item) => {
+    // creates the div the will hold the new Elements
     let newRow = document.createElement("div");
+
+    // sets the new row with the same calss name of the past row to fill it with the new one
     newRow.className = "row-ele";
+
     newRow.innerHTML = `
                       <div class="details">
                           <span class="img"><img src="${item.imageSrc}" alt="" class="dynamic-image" ></span>
@@ -143,12 +110,16 @@ if (window.location.pathname.includes("cart.html")) {
 
                   </div>
             `;
+    // puts the Elements into the next section container
     rightSection.insertBefore(newRow, header.nextSibling.nextSibling);
+
+    // creates the new divider with the same class name of the prev one to inhirit its features
     let divider = document.createElement("hr");
     divider.className = "divider";
     rightSection.insertBefore(divider, newRow.nextSibling);
   });
 
+  // calculates the subtotal of the elemnts of cart rows
   let subtotal = cartItems.reduce((sum, item) => {
     return (
       sum + parseFloat(item.price.replace("$", "") * parseFloat(item.quantity))
@@ -158,6 +129,7 @@ if (window.location.pathname.includes("cart.html")) {
   document.querySelector(
     ".subtotals-title span"
   ).textContent = `$${subtotal}.00`;
+
   document.querySelector(
     ".subtotals-title:last-child span.title"
   ).textContent = `$${subtotal + 80 + 5 + 39}.00`;
@@ -168,13 +140,13 @@ if (window.location.pathname.includes("cart.html")) {
     let trashicon = row.querySelector(".fa-trash");
     let clearAll = document.querySelector(".clear");
 
+    // clears all Elements in the cart
     clearAll.onclick = function () {
-      // let cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
       localStorage.clear();
       document.querySelector(".subtotals-title span").textContent = "$00.00";
       document.querySelector(".subtotals-title:last-child span").textContent =
         "$00.00";
-      document.querySelector(".cart-price").textContent = "00.00";
+      document.querySelector(".cart-price").textContent = "0";
 
       document.querySelectorAll(".row-ele").forEach((row) => {
         row.remove();
@@ -182,9 +154,13 @@ if (window.location.pathname.includes("cart.html")) {
 
       document.querySelectorAll(".divider").forEach((divider) => {
         divider.remove();
+        header.textContent = "Your cart is Empty";
+        header.style.fontSize = "50px";
+        bothbuttons.style.display = "none";
       });
     };
 
+    // increases new elemnt or itemCount
     plusIcon.onclick = function () {
       let quantityELement =
         this.closest(".quantity-btn").querySelector(".Quantity");
@@ -205,6 +181,7 @@ if (window.location.pathname.includes("cart.html")) {
       updateTotals();
     };
 
+    // decreases itemCount
     minusIcon.onclick = function () {
       let quantityELement =
         this.closest(".quantity-btn").querySelector(".Quantity");
@@ -227,6 +204,8 @@ if (window.location.pathname.includes("cart.html")) {
       updateTotals();
     };
 
+    // deletes elemnt from the cart
+
     trashicon.onclick = function () {
       let hr = row.nextSibling;
       hr.remove();
@@ -235,20 +214,26 @@ if (window.location.pathname.includes("cart.html")) {
       let cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
       cartItems.splice(index, 1);
       localStorage.setItem("cartItems", JSON.stringify(cartItems));
+
       document.querySelector(".cart-price").textContent = cartItems.length
         .toString()
         .padStart(2, "0");
       updateTotals();
+
+      updateCartCount();
     };
   });
 
+  // updateTotals function
   function updateTotals() {
     let subtotal = 0;
+
     document.querySelectorAll(".row-ele").forEach((row) => {
       subtotal += parseFloat(
         row.querySelector(".price:nth-child(4)").textContent.replace("$", "")
       );
     });
+
     document.querySelector(
       ".subtotals-title span"
     ).textContent = `$${subtotal.toFixed(2)}`;
@@ -257,4 +242,194 @@ if (window.location.pathname.includes("cart.html")) {
     ).textContent = `$${(subtotal + 80 + 5 + 39).toFixed(2)}`;
   }
 }
+
 ////////////////end of cart page////////////////////////////////
+
+////////////////////////////////start of wishlist page////////////////////////////////
+
+let lovebtn = document.querySelectorAll(".fa-heart").forEach((btn) => {
+  btn.addEventListener("click", () => {
+    let name = document.querySelector("h1").textContent;
+    let subDesc = document.querySelector("h5").textContent;
+    let price = document.querySelector("h2").childNodes[1].textContent.trim();
+
+    let wishlist = JSON.parse(localStorage.getItem("wishlist")) || [];
+    wishlist.push({ name, subDesc, price });
+    localStorage.setItem("wishlist", JSON.stringify(wishlist));
+  });
+});
+
+if (window.location.pathname.includes("wishlist.html")) {
+  let wishlist = JSON.parse(localStorage.getItem("wishlist"));
+
+  let centerSection = document.querySelector(".center-section");
+  let header = document.querySelector(".row-head");
+  // delete header.
+  document.querySelectorAll(".divider").forEach((divider) => {
+    divider.remove();
+  });
+
+  // delete all products.
+  document.querySelectorAll(".row-ele").forEach((row) => {
+    row.remove();
+  });
+
+  wishlist.forEach((item) => {
+    let newrow = document.createElement("div");
+    newrow.className = "row-ele";
+    newrow.innerHTML = `
+                        <div class="details">
+                                <div class="sub-details">
+                                    <h1 >${item.name}</h1>
+                                    <h5 >${item.subDesc}</h5>
+                                </div>
+                         </div>
+                              
+                        <div class="price" style="font-size: 25px; font-weight: 500; ">${item.price}</div>
+                        <div class="cart"><button class="add-to-cart"> ADD TO CART</button></div>
+                              
+                        <div class="price"><i class="fa-solid fa-trash"></i></div>
+                        `;
+
+    centerSection.insertBefore(newrow, header.nextSibling.nextSibling);
+    let divider = document.createElement("hr");
+    divider.className = "divider";
+    centerSection.insertBefore(divider, newrow.nextSibling);
+
+    let cart = document.querySelectorAll(".cart button");
+    cart.forEach((crt) => {
+      crt.addEventListener("click", () => {
+        let name = document.querySelector(".sub-details h1").textContent;
+        let detailsProd = document.querySelector(".sub-details h5").textContent;
+        let price = document.querySelector(".row-ele .price").textContent;
+
+        console.log(name, detailsProd, price);
+        let cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
+        cartItems.push({ name, detailsProd, price });
+        localStorage.setItem("cartItems", JSON.stringify(cartItems));
+        updateCartCount();
+      });
+    });
+
+    if (window.location.pathname.includes("cart.html")) {
+      let cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
+
+      let rightSection = document.querySelector(".right-section");
+      let header = document.querySelector(".right-row-head");
+
+      document.querySelectorAll(".divider").forEach((divider) => {
+        divider.remove();
+      });
+
+      document.querySelectorAll(".row-ele").forEach((row) => {
+        row.remove();
+      });
+
+      cartItems.forEach((item) => {
+        let newRow = document.createElement("div");
+        newRow.className = "row-ele";
+        newRow.innerHTML = `
+        <div class="details">
+                                <div class="sub-details">
+                                    <h1 >${item.name}</h1>
+                                    <h5 >${item.detailsProd}</h5>
+                                </div>
+                         </div>
+                              
+                        <div class="price" style="font-size: 25px; font-weight: 500; ">${item.price}</div>
+                        <div class="cart"><button class="add-to-cart"> ADD TO CART</button></div>
+                              
+                        <div class="price"><i class="fa-solid fa-trash"></i></div>
+        `;
+        rightSection.insertBefore(newRow, header.nextSibling.nextSibling);
+        let divider = document.createElement("hr");
+        divider.className = "divider";
+        rightSection.insertBefore(divider, newRow.nextSibling);
+      });
+    }
+
+    let bothbuttons = document.querySelector(".buttons-both");
+    let clearAll = document.querySelector(".clear");
+
+    clearAll.onclick = function () {
+      localStorage.clear();
+      document.querySelectorAll(".row-ele").forEach((row) => {
+        row.remove();
+        let wishlist = JSON.parse(localStorage.getItem("wishlist")) || [];
+        localStorage.setItem("wishlist", JSON.stringify(wishlist));
+
+        if (wishlist.length === 0) {
+          console.log("wish list is empty");
+          header.textContent = "Your Wishlist is Empty";
+          header.style.fontSize = "50px";
+          bothbuttons.style.display = "none";
+        }
+      });
+
+      document.querySelectorAll(".divider").forEach((divider) => {
+        divider.remove();
+      });
+    };
+
+    document.querySelectorAll(".fa-trash").forEach((trash, index) => {
+      trash.onclick = function () {
+        let hr = newrow.nextSibling;
+        hr.remove();
+        if (hr && hr.tagName === "HR") newrow.remove();
+        console.log(newrow);
+        let wishlist = JSON.parse(localStorage.getItem("wishlist")) || [];
+        wishlist.splice(index, 1);
+        localStorage.setItem("wishlist", JSON.stringify(wishlist));
+      };
+    });
+  });
+}
+
+////////////////end of wishlist page////////////////////////////////
+
+////////////////////////////////////////////////search function////////////////////////////////
+
+function search() {
+  let searchboxVal = document.getElementById("searchBox").value.toUpperCase();
+  let products = document.querySelectorAll(".product");
+  for (let i = 0; i < products.length; i++) {
+    let pname = products[i].getElementsByTagName("h1")[0];
+    if (pname) {
+      let pnameValue = pname.textContent;
+      if (pnameValue.toUpperCase().indexOf(searchboxVal) > -1) {
+        products[i].style.display = "";
+      } else products[i].style.display = "none";
+    }
+  }
+}
+
+search();
+////////////////////////////////////////////////search function////////////////////////////////
+
+/////////////////////////start of filter using category function////////////////////////////////
+let productsFilter = document.querySelectorAll(".product");
+let buttonsFilter = document.querySelectorAll(".filter-cat");
+buttonsFilter.forEach((btn) => {
+  btn.addEventListener("click", () => {
+    showElements(btn);
+  });
+});
+// window.addEventListener("DomContentLoaded", () => {
+buttonsFilter[0].classList.add("active");
+// });
+function showElements(btn) {
+  productsFilter.forEach((item) => {
+    if (item.classList.contains(btn.id)) {
+      resetActivebutton(btn);
+      btn.classList.add("active");
+      item.style.display = "block";
+    } else item.style.display = "none";
+  });
+}
+
+function resetActivebutton(btn) {
+  buttonsFilter.forEach((btn) => {
+    btn.classList.remove("active");
+  });
+}
+console.log(buttonsFilter[0].classList);

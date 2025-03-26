@@ -27,22 +27,22 @@ a {
   font-style: normal;
 }
 
-/* Nav-section */
-
 .nav {
-  background-color: var(--main-color);
+  background-color: #2BA149;
   color: white;
   padding: 20px 0px;
   display: flex;
   justify-content: space-around;
   align-items: center;
+  margin-bottom: 50px;
+  width: 100%;
 }
 .logo {
   width: 10%;
 }
 
 .logo img {
-  width: 100%;
+width: 100%;
 }
 .nav ul {
   list-style: none;
@@ -86,11 +86,37 @@ a {
   background-color: transparent;
 }
 
+.countCart{
+  background-color: #ffbb00;
+  color: white;
+  width: 18px;
+  height: 18px;
+  text-align: center;
+  border-radius: 50%;
+  font-size: 13px;
+  padding: 0;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.iconCart{
+  cursor: pointer;
+}
+.countCart{
+  position: absolute;
+  margin-left: 18px;
+  margin-top: -20px;
+  }
 /* Hero section */
 .container {
   display: flex;
   height: 60vh;
   margin: 50px 0;
+  margin-bottom: 150px;
+
 }
 .container .left,
 .container .right,
@@ -98,6 +124,8 @@ a {
   width: 5%;
   height: 100%;
   background-color: #fff;
+  margin-bottom: 50px;
+
 }
 .social {
   justify-content: center;
@@ -358,7 +386,7 @@ a {
 .counter-container {
   width: 90%;
   margin: auto;
-  background-color: var(--main-color);
+  background:linear-gradient(-70deg, #2BA149, #f3f3f3);
   border-radius: 10px;
   display: flex;
   border-radius: 10px;
@@ -391,7 +419,11 @@ a {
 }
 .midel-counter {
   width: 25%;
-  background-color: #f7f7f7;
+  /* background-color: #f7f7f7; */
+}
+
+.midel-counter img{
+  width: 350px;
 }
 
 .last-counter {

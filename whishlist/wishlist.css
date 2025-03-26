@@ -2,12 +2,98 @@ body{
     padding: 0;
     margin-left: 80px;
     margin-right: 80px;
+    margin-top: 0;
     font-family: 'Jost', sans-serif;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
+/* Nav-section */
+
+.nav {
+    background-color: #2BA149;
+    color: white;
+    padding: 20px 0px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 50px;
+    width: 100%;
+}
+.logo {
+    width: 10%;
+}
+
+.logo img {
+  width: 100%;
+}
+.nav ul {
+    list-style: none;
+    display: flex;
+}
+.nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 0 20px;
+    padding-bottom: 10px;
+    position: relative;
+}
+.nav ul li a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 100%;
+    height: 2px;
+    background-color: #fff;
+    transform: scaleX(0);
+    transition: transform 0.3s ease-in-out;
+}
+.nav ul li a:hover {
+    transition: transform 0.3s ease-in-out;
+}
+.nav ul li a:hover::after {
+    transform: scaleX(1);
+}
+.nav-icons img {
+    width: 30%;
+}
+
+.nav-icons ul li a {
+    padding: 0 10px;
+    transform: none;
+}
+
+.nav-icons ul li a::after {
+    background-color: transparent;
+}
+
+.countCart{
+    background-color: #ffbb00;
+    color: white;
+    width: 18px;
+    height: 18px;
+    text-align: center;
+    border-radius: 50%;
+    font-size: 13px;
+    padding: 0;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.iconCart{
+    cursor: pointer;
+}
+.countCart{
+    position: absolute;
+    margin-left: 18px;
+    margin-top: -20px;
+    }
 /* start of the list head section */
 .first-row{
     background-color: #82c34117;
@@ -25,7 +111,7 @@ body{
 .list-title{
     font-size: 30px;
     font-family: 'Jost', sans-serif;
-    font-weight: 100 !important;
+    font-weight: 500 ;
 }
 /* end of the list head section */
 
@@ -39,6 +125,7 @@ body{
     padding: 50px;
     border-radius: 15px;
     border: 2px solid #2BA149;
+    margin-bottom: 50px;
 }
 
 .center-section{
@@ -107,11 +194,6 @@ body{
     color: #2BA149;
     border-radius: 8px;
     font-size: 18px;
-    align-items: center;
-    display: flex;
-    flex-direction: row;
-    gap: 15px;
-    padding-left: 25px;
     cursor: pointer;
 }
 .add-to-cart:hover{
@@ -123,9 +205,6 @@ body{
 /*  end add to cart button */
 
 
-.buttons-both{
-    margin-bottom: 150px;
-}
 
 .divider{
     border: 1px solid #2BA149;
@@ -134,4 +213,96 @@ body{
     align-self: center;
 }
 
+/* last two buttons */
+
+.buttons-both{
+    margin-top: 100px;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    /* margin-bottom: 80px; */
+}
+
+.buttons-both button{
+    height: 58px;
+    width: 280px;
+    font-family: 'jost';
+    font-weight: 500;
+    color: white;
+    border-radius: 8px;
+    font-size: 18px;
+    text-align: center;
+    align-items: center;
+    cursor: pointer;
+    border: none;
+}
+
+.clear{
+    background-color: black; width: 220px;
+}
+.clear:hover{
+background-color: rgb(224, 22, 22);
+transition: 0.5s;
+}
+/* last two buttons */
 /* end of center side cart */
+/* footer section */
+.footer {
+    background-color: #000;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+    border-radius: 10px;
+    width: 100%;
+  }
+  .footer-container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+  }
+  .footer-top {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding-bottom: 20px;
+  }
+  .footer-section {
+    flex: 1;
+    min-width: 200px;
+    margin: 10px;
+  }
+  .footer-section h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  .footer-section ul {
+    list-style: none;
+    padding: 0;
+  }
+  .footer-section ul li {
+    margin: 5px 0;
+  }
+  .footer-section ul li a {
+    color: #bbb;
+    text-decoration: none;
+  }
+  .footer-section ul li a:hover {
+    color: #fff;
+  }
+  .payment-icons {
+    display: flex;
+    justify-content: center;
+  }
+  .payment-icons img {
+    width: 60px;
+    margin: 5px;
+    transition: transform 0.3s;
+  }
+  .payment-icons img:hover {
+    transform: scale(1.1);
+  }
+  .footer-bottom {
+    border-top: 1px solid #444;
+    padding-top: 10px;
+    font-size: 14px;
+  }
