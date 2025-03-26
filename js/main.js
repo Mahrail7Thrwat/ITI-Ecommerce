@@ -414,9 +414,9 @@ buttonsFilter.forEach((btn) => {
     showElements(btn);
   });
 });
-// window.addEventListener("DomContentLoaded", () => {
-buttonsFilter[0].classList.add("active");
-// });
+window.addEventListener("DomContentLoaded", () => {
+  buttonsFilter[0].classList.add("active");
+});
 function showElements(btn) {
   productsFilter.forEach((item) => {
     if (item.classList.contains(btn.id)) {

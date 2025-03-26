@@ -332,6 +332,7 @@ width: 100%;
   background-color: var(--main-color);
   padding: 7px 30px;
   color: #f3f3f3;
+  border-radius: 0 8px 8px 0;
 }
 .batch p {
   font-size: 12px;
@@ -362,7 +363,7 @@ width: 100%;
 }
 .add-cartBtn {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
   align-items: center;
   border: solid 1.5px var(--fifth-color);
   color: var(--main-color);
@@ -370,6 +371,15 @@ width: 100%;
   border-radius: 10px;
   padding: 10px 0;
 }
+
+.add-cartBtn:hover {
+  background-color: #2BA149;
+  color: #f3f3f3;
+  transition: .5s;
+  cursor: pointer;
+  border: 2px solid #0bbb37;
+}
+
 .add-cartBtn .card-img img {
   width: 60%;
 }
@@ -377,11 +387,15 @@ width: 100%;
   text-align: center;
   margin: 30px 0;
 }
-.see-procuts button {
-  background-color: transparent;
-  border: none;
-  margin-bottom: 50px;
+.see-procuts a {
+ cursor: pointer;
+ text-decoration: none;
+ color: #000;
+ text-decoration: underline;
+ font-weight: 600;
+ font-size: larger;
 }
+
 /* counter section */
 .counter-container {
   width: 90%;
