@@ -1,6 +1,9 @@
 :root {
   --main-color: rgba(43, 161, 73, 1);
   --secondary-color: rgba(130, 195, 65, 1);
+  --third-color: #f4faee;
+  --fourth-color: #ebf5f4;
+  --fifth-color:rgba(130, 130, 130, 1);
 }
 body {
   margin: 0;
@@ -333,7 +336,7 @@ a {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  border: solid 1.5px var(--secondary-color);
+  border: solid 1.5px var(--fifth-color);
   color: var(--main-color);
   margin: 0px 30px 15px 30px;
   border-radius: 10px;
@@ -473,29 +476,264 @@ a {
   padding-top: 10px;
   font-size: 14px;
 }
-/* start of font importing */
-@font-face {
-  font-family: "Jost";
-  src: url("/fonts/Jost-Regular.ttf") format("truetype");
+/* product-title */
+.singPro-top {
+  background-color: var(--third-color);
+  width: 90%;
+  height: 60vh;
+  margin: 30px auto;
+  display: flex;
+  overflow: hidden;
 }
 
-@font-face {
-  font-family: "Jost";
-  src: url("/fonts/Jost-Medium.ttf") format("truetype");
+.singPro-text {
+  background-color: var(--third-color);
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 30px;
+}
+.shop {
+  padding: 30px 0px;
+  font-weight: 300;
+}
+.singPro-img {
+  width: 50%;
+  height: 100%;
+ 
 }
 
-/*
-@font-face {
-    font-family: 'Jost';
-    src: url('/fonts/Jost-SemiBold.ttf') format('truetype');
+.img-cont {
+  width: 80%;
+  height: 100%;
+  background-color: var(--fourth-color);
+  margin: auto;
+  display: grid;
+  justify-content: center;
+}
+.img-cont img {
+  width: 100%;
+  height: auto;
 }
 
-@font-face {
-    font-family: 'Jost';
-    src: url('/fonts/Jost-Bold.ttf') format('truetype');
-} */
-/* end of font importing */
+.singPro-container {
+  width: 90%;
 
-body {
-  font-family: "Jost", sans-serif;
+  margin: auto;
+  
+  display: flex;
+}
+.left-singPro {
+  width: 30%;
+
+  background-color: var(--third-color);
+  border: 1px solid var(--fifth-color);
+}
+.left-singPro h5 {
+  padding: 15px 5px 20px 20px;
+}
+.mid-singPro {
+  width: 30%;
+  height: 60vh;
+  margin: 0px 15px;
+  background-color: var(--third-color);
+}
+.right-singPro {
+  width: 40%;
+  
+}
+
+/* top-rated */
+.top-rated-prs {
+  width: 90%;
+  display: flex;
+  margin: auto;
+  background-color: var(--fourth-color);
+  margin-bottom: 20px;
+}
+
+.img-topRate {
+  width: 30%;
+}
+.text-topRated {
+  width: 70%;
+  margin: 10px 0px 5px 5px;
+}
+.stars-imgs {
+  width: 100%;
+  padding-top: 8px;
+}
+.stars-imgs img {
+  width: 7%;
+}
+/* middle */
+.cont-mid {
+  background-color: var(--fourth-color);
+  width: 80%;
+  margin: auto;
+  height: 100%;
+  border: 1px solid var(--fifth-color));
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.img-top {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin: 20px 0px 20px 60px;
+}
+.img-top img {
+  width: 60%;
+  margin: auto 0;
+}
+.slider-img {
+  padding: 40px 60px;
+  width: 90%;
+}
+#slide-photos {
+  width: 20%;
+}
+#slid-LR {
+  width: 6%;
+  padding-bottom: 12px;
+}
+.slider-img #slide-photos {
+  border: 1px solid var(--fifth-color);
+}
+.right-singPro {
+  padding: 20px;
+}
+.bottom-right {
+  display: flex;
+}
+.add-probtn {
+  width: 30%;
+  display: flex;
+  border: 2px solid var(--fifth-color);
+}
+.price {
+  display: flex;
+  align-items: flex-start;
+}
+.rate {
+  display: flex;
+  align-items: center;
+}
+.stars {
+  width: 40%;
+}
+.pro-price {
+  display: flex;
+  padding: 10px 0;
+}
+.pro-price p {
+  padding: 0 10px;
+  font-weight: bold;
+}
+.add-btns {
+  display: flex;
+  margin: auto;
+}
+.add-probtn {
+  margin: auto;
+  border-radius: 10px;
+}
+
+.num-pro img {
+  height: 70%;
+}
+.cont-btn {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+}
+.card-photo {
+  display: flex;
+  align-items: center;
+}
+.mid-right{
+  margin: 10px 5px;
+}
+.card-photo img {
+  width: 12px;
+  height: 12px;
+}
+.cartBtn-one {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  border: solid 1.5px var(--fifth-color);
+  color: var(--main-color);
+  margin: 0px 5px 15px 30px;
+  border-radius: 5px;
+  padding: 10px 20px;
+}
+.card-photo p{
+  margin:0px 10px;
+}
+.cartBtn {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  border: solid 1.5px var(--fifth-color);
+  color: var(--main-color);
+  margin: 0px 20px 15px 30px;
+  border-radius: 5px;
+  padding: 7px ;
+}
+.wislist-icon img{
+
+  width: 50%;
+
+}
+.social-media{
+  display: flex;
+  align-items: center;
+ 
+}
+.social-media h5{
+  margin: 4px;
+}
+.social-media img{
+  margin: 5px;
+
+}
+.bottom-right {
+  display: block;
+  border: 1px solid var(--fifth-color);
+  border-radius: 10px;
+  padding: 8px;
+  background-color: var(--fourth-color);
+
+}
+.fetures-cont{
+  display: flex;
+  padding: 3px;
+  margin: 10px 5px;
+}
+.fetures-cont img{
+
+  margin-right: 10px;
+}
+
+.last-section{
+  width: 90%;
+  margin:50px auto;
+  padding: 15px 10px 15px 15px;
+  background-color: var(--third-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.last-sec{
+  width: 25%;
+}
+.last-sec img{
+  width: 20%;
+  margin: 10px 50px ;
+  
 }
