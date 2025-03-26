@@ -1,70 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Shop</title>
-    <link rel="icon" href="img/16x16.png" type="image/x-icon">
-    <link rel="stylesheet" href="/css/all.min.css">
-    <link rel="stylesheet" href="products.css">
+    <link rel="icon" href="img/16x16.png" type="image/x-icon" />
+    <link rel="stylesheet" href="/css/all.min.css" />
+    <link rel="stylesheet" href="products.css" />
     <!-- <link rel="stylesheet" href="/css/style.css"> -->
-</head>
-<body>
-
+  </head>
+  <body>
     <nav class="nav">
-        <div class="logo">
-          <a href="../home.html"><img src="../src/logo.png" alt="" /></a>
-        </div>
+      <div class="logo">
+        <a href="../home.html"><img src="../src/logo.png" alt="" /></a>
+      </div>
+      <ul>
+        <li>
+          <a href="./home.html">Home</a>
+        </li>
+
+        <li>
+          <a href="./categories.html">Categories</a>
+        </li>
+
+        <li>
+          <a href="products.html">Products</a>
+        </li>
+        <li>
+          <a href="./products.html">Contact</a>
+        </li>
+      </ul>
+      <div class="nav-icons">
         <ul>
           <li>
-            <a href="./home.html">Home</a>
-          </li>
-
-          <li>
-            <a href="./categories.html">Categories</a>
-          </li>
-
-          <li>
-            <a href="products.html">Products</a>
+            <a href="">
+              <i class="fa-solid fa-magnifying-glass"></i>
+            </a>
           </li>
           <li>
-            <a href="./products.html">Contact</a>
+            <a href="./login.html">
+              <i class="fa-regular fa-user"></i>
+            </a>
+          </li>
+          <li>
+            <a href="../whishlist/wishlist.html">
+              <i class="fa-regular fa-heart"></i>
+            </a>
+          </li>
+          <li>
+            <div class="cartCount">
+              <div class="iconCart">
+                <a target="_blank" href="../cart/cart.html"
+                  ><img src="../src/bag.svg" alt=""
+                /></a>
+              </div>
+              <div class="countCart">0</div>
+            </div>
           </li>
         </ul>
-        <div class="nav-icons">
-          <ul>
-            <li>
-              <a href="">
-                <i class="fa-solid fa-magnifying-glass"></i>    
-              </a>
-            </li>
-            <li>
-              <a href="./login.html">
-                <i class="fa-regular fa-user"></i>
-              </a>
-            </li>
-            <li>
-              <a href="../whishlist/wishlist.html">
-                <i class="fa-regular fa-heart"></i>
-              </a>
-            </li>
-            <li>
-              <div class="cartCount">
-                <div class="iconCart"><a target="_blank" href="../cart/cart.html"><img src="../src/bag.svg" alt=""></a></div>
-                <div class="countCart">0</div>
-            </div>
-            </li>
-          </ul>
-        </div>
-      </nav>
-<!-- start of the filters raw -->
- <div class="filtersRow">
-    <section class="first-row">
+      </div>
+    </nav>
+    <!-- start of the filters raw -->
+    <div class="filtersRow">
+      <section class="first-row">
         <span class="filter-title">Showing 1-9 of 24 results</span>
 
         <div class="search">
-            <input  placeholder="Search Product" id="searchBox" onkeyup="search()">
-            <span class="search-icon" ><a><i class="fa-solid fa-magnifying-glass"></i></a></span>
+          <input
+            placeholder="Search Product"
+            id="searchBox"
+            onkeyup="search()"
+          />
+          <span class="search-icon"
+            ><a><i class="fa-solid fa-magnifying-glass"></i></a
+          ></span>
         </div>
 
         <!-- <div class="shop-cart">
@@ -74,299 +83,451 @@
             </div>
 
         </div> -->
-
-    </section>
- </div>
-<!-- end of the filters raw -->
- 
-
-
-<!-- start of the products raw -->
-<div class="container">
-    <!-- start of left section -->
-    <div class="left-section">
-            <div class="first-row-cat">
-                <div class="categories-1">
-                    <h3 style="position: relative;">Product Categories</h3>
-                    <p><button class="filter-cat" id="all" style="width: 100px;">All </button></p>
-                    <h5> Premium Scrubs Lab Coats</h5>
-                        <div class="all-categ"> 
-                            <p><button class="filter-cat" id="male-scrub">Male Scrubs </button><span class="quantity" style="margin-left:35%;"> 2 </span></p>
-                            <p><button class="filter-cat" id="female-scrub"> Female Scrubs</button> <span class="quantity" style="margin-left:29%;"> 1 </span></p>
-                            <p><button class="filter-cat" id="male-labcoat"> Male Lab coats </button><span class="quantity" style="margin-left:28%;"> 2 </span></p>
-                            <p><button class="filter-cat" id="female-labcoat"> Female Lab coats </button><span class="quantity" style="margin-left:23%;" > 1 </span></p>
-                        </div>
-                </div>
-                <div class="categories-2">
-                    <h5>Medical Supplies</h5>
-                    <div class="all-categ"> 
-                    <p><button class="filter-cat" id="medical-subs"> Medical Supplies </button><span class="quantity" style="margin-left:22%;"> 3 </span></p>       
-                </div>
-                </div>
-            </div>
-
-            <div class="second-row-price">
-                <div class="price">
-                    <h3>Price Filter</h3>
-                    <p class="price"><span class="start-price">$19</span> - <span class="end-price">$140</span></p>
-                </div>
-
-                <div class="range">
-                    <input type="range" class="range" min="10$" max="200$">
-                </div>
-                </div>
+      </section>
     </div>
-    <!-- end of left section -->
+    <!-- end of the filters raw -->
 
-        <!-- start of right section -->
-        <div class="right-section">
-
-            <!-- first row -->
-            <div class="row-1" id="row">
-                
-<<<<<<< HEAD
-                <div class="product" >
-=======
-                <div class="product all male-labcoat">
->>>>>>> 16dd2298aa2044bf132d04e2bfd03fd08f16e3ea
-                    <div class="entire-prod-row1">20 % off</div>
-                    <div class="entire-prod-row2">
-                        <div class="image-product">
-                            <img src="./src/labcoat-man.png" alt="">
-                        </div>
-                    </div>
-                    <div class="entire-prod-row3">
-                        <h1 style="font-size: 25px;">Mustwear Pro-Active Male Labcoat</h1>
-                        <h2><span style="color: #555555; text-decoration: line-through;">$62.00</span>$42.00</h2>
-                        <div class="last-row">
-<<<<<<< HEAD
-                            <div class="love"><a><i class="fa-solid fa-eye-slash"></i></a></div>
-                            <div class="cart"><button class="add-to-cart"><a><img src="./src/Vector.svg" alt=""></a> ADD TO CART</button></div>
-=======
-                            <div class="eye"><a><i class="fa-solid fa-eye-slash"></i></a></div>
-                            <div class="cart"><button class="add-to-cart"><a><img src="/src/Vector.svg" alt=""></a>ADD TO CART</button></div>
->>>>>>> 16dd2298aa2044bf132d04e2bfd03fd08f16e3ea
-                            <div class="love"><a><i class="fa-regular fa-heart"></i></a></div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="product all female-scrub">
-                    <div class="entire-prod-row1" style="background-color: #82C341;">New</div>
-                    <div class="entire-prod-row2">
-                        <div class="image-product">
-<<<<<<< HEAD
-                            <img src="./src/image.png" alt="">
-=======
-                            <img src="/src/female scrub.png" alt="">
->>>>>>> 16dd2298aa2044bf132d04e2bfd03fd08f16e3ea
-                        </div>
-                    </div>
-                    <div class="entire-prod-row3">
-                        <h1 style="font-size: 25px;">Mustwear Pro-Active Female Scrub </h1>
-                        <h2><span style="color: #555555; text-decoration: line-through;">$62.00</span> $42.00</h2>
-                        <div class="last-row">
-                            <div class="love"><a><i class="fa-solid fa-eye-slash"></i></a></div>
-                            <div class="cart"><button class="add-to-cart"><a><img src="./src/Vector.svg" alt=""></a> ADD TO CART</button></div>
-                            <div class="love"><a><i class="fa-regular fa-heart"></i></a></div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="product all male-scrub">
-                    <div class="entire-prod-row1" style="background-color: #CB2009;">80 % off</div>
-                    <div class="entire-prod-row2">
-                        <div class="image-product">
-                            <img src="./src/image-1.png" alt="">
-                        </div>
-                    </div>
-                    <div class="entire-prod-row3">
-                        <h1 style="font-size: 25px;">ProShield Banded Scrub For Men</h1>
-                        <h2><span style="color: #555555; text-decoration: line-through;">$62.00</span> $42.00</h2>
-                        <div class="last-row">
-                            <div class="love"><a><i class="fa-solid fa-eye-slash"></i></a></div>
-                            <div class="cart"><button class="add-to-cart"><a><img src="./src/Vector.svg" alt=""></a> ADD TO CART</button></div>
-                            <div class="love"><a><i class="fa-regular fa-heart"></i></a></div>
-                        </div>
-                    </div>
-                </div>
+    <!-- start of the products raw -->
+    <div class="container">
+      <!-- start of left section -->
+      <div class="left-section">
+        <div class="first-row-cat">
+          <div class="categories-1">
+            <h3 style="position: relative">Product Categories</h3>
+            <p>
+              <button class="filter-cat" id="all" style="width: 100px">
+                All
+              </button>
+            </p>
+            <h5>Premium Scrubs Lab Coats</h5>
+            <div class="all-categ">
+              <p>
+                <button class="filter-cat" id="male-scrub">Male Scrubs</button
+                ><span class="quantity" style="margin-left: 35%"> 2 </span>
+              </p>
+              <p>
+                <button class="filter-cat" id="female-scrub">
+                  Female Scrubs
+                </button>
+                <span class="quantity" style="margin-left: 29%"> 1 </span>
+              </p>
+              <p>
+                <button class="filter-cat" id="male-labcoat">
+                  Male Lab coats</button
+                ><span class="quantity" style="margin-left: 28%"> 2 </span>
+              </p>
+              <p>
+                <button class="filter-cat" id="female-labcoat">
+                  Female Lab coats</button
+                ><span class="quantity" style="margin-left: 23%"> 1 </span>
+              </p>
             </div>
-            <!-- first row -->
-
-            <!-- second row -->
-
-            <div class="row-2" id="row">
-                <div class="product all medical-subs">
-                    <div class="entire-prod-row1">20 % off</div>
-                    <div class="entire-prod-row2">
-                        <div class="image-product">
-                            <img src="./src/face.png" alt="">
-                        </div>
-                    </div>
-                    <div class="entire-prod-row3">
-                        <h1 style="font-size: 25px;">Face Mask complete sith another </h1>
-                        <h2><span style="color: #555555; text-decoration: line-through;">$62.00</span> $42.00</h2>
-                        <div class="last-row">
-                            <div class="love"><a><i class="fa-solid fa-eye-slash"></i></a></div>
-                            <div class="cart"><button class="add-to-cart"><a><img src="./src/Vector.svg" alt=""></a> ADD TO CART</button></div>
-                            <div class="love"><a><i class="fa-regular fa-heart"></i></a></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="product all medical-subs">
-                    <div class="entire-prod-row1" style="background-color: #82C341;">New</div>
-                    <div class="entire-prod-row2">
-                        <div class="image-product">
-                            <img src="./src/imagesteth.png" alt="">
-                        </div>
-                    </div>
-                    <div class="entire-prod-row3">
-                        <h1 style="font-size: 25px;">Mustwear Pro-Active Male Labcoat </h1>
-                        <h2><span style="color: #555555; text-decoration: line-through;">$62.00</span> $42.00</h2>
-                        <div class="last-row">
-                            <div class="love"><a><i class="fa-solid fa-eye-slash"></i></a></div>
-                            <div class="cart"><button class="add-to-cart"><a><img src="./src/Vector.svg" alt=""></a> ADD TO CART</button></div>
-                            <div class="love"><a><i class="fa-regular fa-heart"></i></a></div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="product all medical-subs">
-                    <div class="entire-prod-row1" style="background-color: #CB2009;">80 % off</div>
-                    <div class="entire-prod-row2">
-                        <div class="image-product">
-                            <img src="./src/mask.png" alt="">
-                        </div>
-                    </div>
-                    <div class="entire-prod-row3">
-                        <h1 style="font-size: 25px;">Reusable Mask Digital complete sith </h1>
-                        <h2><span style="color: #555555; text-decoration: line-through;">$62.00</span> $42.00</h2>
-                        <div class="last-row">
-                            <div class="love"><a><i class="fa-solid fa-eye-slash"></i></a></div>
-                            <div class="cart"><button class="add-to-cart"><a><img src="./src/Vector.svg" alt=""></a> ADD TO CART</button></div>
-                            <div class="love"><a><i class="fa-regular fa-heart"></i></a></div>
-                        </div>
-                    </div>
-                </div>
+          </div>
+          <div class="categories-2">
+            <h5>Medical Supplies</h5>
+            <div class="all-categ">
+              <p>
+                <button class="filter-cat" id="medical-subs">
+                  Medical Supplies</button
+                ><span class="quantity" style="margin-left: 22%"> 3 </span>
+              </p>
             </div>
-            <!-- second row -->
+          </div>
+        </div>
 
-            <!-- third row -->
+        <div class="second-row-price">
+          <div class="price">
+            <h3>Price Filter</h3>
+            <p class="price">
+              <span class="start-price">$19</span> -
+              <span class="end-price">$140</span>
+            </p>
+          </div>
 
-            <div class="row-3" id="row">
-                <div class="product all female-labcoat      ">
-                    <div class="entire-prod-row1">20 % off</div>
-                    <div class="entire-prod-row2">
-                        <div class="image-product">
-<<<<<<< HEAD
-                            <img src="./src/face.png" alt="">
-=======
-                            <img src="/src/image.png" alt="">
->>>>>>> 16dd2298aa2044bf132d04e2bfd03fd08f16e3ea
-                        </div>
-                    </div>
-                    <div class="entire-prod-row3">
-                        <h1 style="font-size: 25px;">Mustwear Pro-Active Female Labcoat</h1>
-                        <h2><span style="color: #555555; text-decoration: line-through;">$92.00</span> $62.00</h2>
-                        <div class="last-row">
-                            <div class="love"><a><i class="fa-solid fa-eye-slash"></i></a></div>
-                            <div class="cart"><button class="add-to-cart"><a><img src="./src/Vector.svg" alt=""></a> ADD TO CART</button></div>
-                            <div class="love"><a><i class="fa-regular fa-heart"></i></a></div>
-                        </div>
-                    </div>
+          <div class="range">
+            <input type="range" class="range" min="10$" max="200$" />
+          </div>
+        </div>
+      </div>
+      <!-- end of left section -->
+
+      <!-- start of right section -->
+      <div class="right-section">
+        <!-- first row -->
+        <div class="row-1" id="row">
+          <div class="product">
+            <div class="product all male-labcoat">
+              <div class="entire-prod-row1">20 % off</div>
+              <div class="entire-prod-row2">
+                <div class="image-product">
+                  <img src="./src/labcoat-man.png" alt="" />
                 </div>
+              </div>
+              <div class="entire-prod-row3">
+                <h1 style="font-size: 25px">
+                  Mustwear Pro-Active Male Labcoat
+                </h1>
+                <h2>
+                  <span style="color: #555555; text-decoration: line-through"
+                    >$62.00</span
+                  >$42.00
+                </h2>
+                <div class="last-row">
+                  <div class="love">
+                    <a><i class="fa-solid fa-eye-slash"></i></a>
+                  </div>
+                  <div class="cart">
+                    <button class="add-to-cart">
+                      <a><img src="./src/Vector.svg" alt="" /></a> ADD TO CART
+                    </button>
+                  </div>
 
-                <div class="product all male-scrub">
-                    <div class="entire-prod-row1" style="background-color: #82C341;">New</div>
-                    <div class="entire-prod-row2">
-                        <div class="image-product">
-<<<<<<< HEAD
-                            <img src="./src/imagesteth.png" alt="">
-=======
-                            <img src="/src/image-1.png" alt="">
->>>>>>> 16dd2298aa2044bf132d04e2bfd03fd08f16e3ea
-                        </div>
-                    </div>
-                    <div class="entire-prod-row3">
-                        <h1 style="font-size: 25px;">Mustwear Pro-Active Male Scrub</h1>
-                        <h2><span style="color: #555555; text-decoration: line-through;">$105.00</span> $65.00</h2>
-                        <div class="last-row">
-                            <div class="love"><a><i class="fa-solid fa-eye-slash"></i></a></div>
-                            <div class="cart"><button class="add-to-cart"><a><img src="./src/Vector.svg" alt=""></a> ADD TO CART</button></div>
-                            <div class="love"><a><i class="fa-regular fa-heart"></i></a></div>
-                        </div>
-                    </div>
+                  <div class="eye">
+                    <a><i class="fa-solid fa-eye-slash"></i></a>
+                  </div>
+                  <div class="cart">
+                    <button class="add-to-cart">
+                      <a><img src="/src/Vector.svg" alt="" /></a>ADD TO CART
+                    </button>
+                  </div>
+                  <div class="love">
+                    <a><i class="fa-regular fa-heart"></i></a>
+                  </div>
                 </div>
-
-                <div class="product all male-labcoat  ">
-                    <div class="entire-prod-row1" style="background-color: #CB2009;">80 % off</div>
-                    <div class="entire-prod-row2">
-                        <div class="image-product">
-<<<<<<< HEAD
-                            <img src="./src/mask.png" alt="">
-=======
-                            <img src="/src/labcoat-man.png" alt="">
->>>>>>> 16dd2298aa2044bf132d04e2bfd03fd08f16e3ea
-                        </div>
-                    </div>
-                    <div class="entire-prod-row3">
-                        <h1 style="font-size: 25px;">Mustwear Pro-Active Male Labcoat</h1>
-                        <h2><span style="color: #555555; text-decoration: line-through;">$62.00</span> $42.00</h2>
-                        <div class="last-row">
-                            <div class="love"><a><i class="fa-solid fa-eye-slash"></i></a></div>
-                            <div class="cart"><button class="add-to-cart"><a><img src="./src/Vector.svg" alt=""></a> ADD TO CART</button></div>
-                            <div class="love"><a><i class="fa-regular fa-heart"></i></a></div>
-                        </div>
-                    </div>
-                </div>
+              </div>
             </div>
-            <!-- third row -->
 
+            <div class="product all female-scrub">
+              <div class="entire-prod-row1" style="background-color: #82c341">
+                New
+              </div>
+              <div class="entire-prod-row2">
+                <div class="image-product">
+                  <img src="./src/image.png" alt="" />
+
+                  <img src="/src/female scrub.png" alt="" />
+                </div>
+              </div>
+              <div class="entire-prod-row3">
+                <h1 style="font-size: 25px">
+                  Mustwear Pro-Active Female Scrub
+                </h1>
+                <h2>
+                  <span style="color: #555555; text-decoration: line-through"
+                    >$62.00</span
+                  >
+                  $42.00
+                </h2>
+                <div class="last-row">
+                  <div class="love">
+                    <a><i class="fa-solid fa-eye-slash"></i></a>
+                  </div>
+                  <div class="cart">
+                    <button class="add-to-cart">
+                      <a><img src="./src/Vector.svg" alt="" /></a> ADD TO CART
+                    </button>
+                  </div>
+                  <div class="love">
+                    <a><i class="fa-regular fa-heart"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="product all male-scrub">
+              <div class="entire-prod-row1" style="background-color: #cb2009">
+                80 % off
+              </div>
+              <div class="entire-prod-row2">
+                <div class="image-product">
+                  <img src="./src/image-1.png" alt="" />
+                </div>
+              </div>
+              <div class="entire-prod-row3">
+                <h1 style="font-size: 25px">ProShield Banded Scrub For Men</h1>
+                <h2>
+                  <span style="color: #555555; text-decoration: line-through"
+                    >$62.00</span
+                  >
+                  $42.00
+                </h2>
+                <div class="last-row">
+                  <div class="love">
+                    <a><i class="fa-solid fa-eye-slash"></i></a>
+                  </div>
+                  <div class="cart">
+                    <button class="add-to-cart">
+                      <a><img src="./src/Vector.svg" alt="" /></a> ADD TO CART
+                    </button>
+                  </div>
+                  <div class="love">
+                    <a><i class="fa-regular fa-heart"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- first row -->
+
+          <!-- second row -->
+
+          <div class="row-2" id="row">
+            <div class="product all medical-subs">
+              <div class="entire-prod-row1">20 % off</div>
+              <div class="entire-prod-row2">
+                <div class="image-product">
+                  <img src="./src/face.png" alt="" />
+                </div>
+              </div>
+              <div class="entire-prod-row3">
+                <h1 style="font-size: 25px">Face Mask complete sith another</h1>
+                <h2>
+                  <span style="color: #555555; text-decoration: line-through"
+                    >$62.00</span
+                  >
+                  $42.00
+                </h2>
+                <div class="last-row">
+                  <div class="love">
+                    <a><i class="fa-solid fa-eye-slash"></i></a>
+                  </div>
+                  <div class="cart">
+                    <button class="add-to-cart">
+                      <a><img src="./src/Vector.svg" alt="" /></a> ADD TO CART
+                    </button>
+                  </div>
+                  <div class="love">
+                    <a><i class="fa-regular fa-heart"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="product all medical-subs">
+              <div class="entire-prod-row1" style="background-color: #82c341">
+                New
+              </div>
+              <div class="entire-prod-row2">
+                <div class="image-product">
+                  <img src="./src/imagesteth.png" alt="" />
+                </div>
+              </div>
+              <div class="entire-prod-row3">
+                <h1 style="font-size: 25px">
+                  Mustwear Pro-Active Male Labcoat
+                </h1>
+                <h2>
+                  <span style="color: #555555; text-decoration: line-through"
+                    >$62.00</span
+                  >
+                  $42.00
+                </h2>
+                <div class="last-row">
+                  <div class="love">
+                    <a><i class="fa-solid fa-eye-slash"></i></a>
+                  </div>
+                  <div class="cart">
+                    <button class="add-to-cart">
+                      <a><img src="./src/Vector.svg" alt="" /></a> ADD TO CART
+                    </button>
+                  </div>
+                  <div class="love">
+                    <a><i class="fa-regular fa-heart"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="product all medical-subs">
+              <div class="entire-prod-row1" style="background-color: #cb2009">
+                80 % off
+              </div>
+              <div class="entire-prod-row2">
+                <div class="image-product">
+                  <img src="./src/mask.png" alt="" />
+                </div>
+              </div>
+              <div class="entire-prod-row3">
+                <h1 style="font-size: 25px">
+                  Reusable Mask Digital complete sith
+                </h1>
+                <h2>
+                  <span style="color: #555555; text-decoration: line-through"
+                    >$62.00</span
+                  >
+                  $42.00
+                </h2>
+                <div class="last-row">
+                  <div class="love">
+                    <a><i class="fa-solid fa-eye-slash"></i></a>
+                  </div>
+                  <div class="cart">
+                    <button class="add-to-cart">
+                      <a><img src="./src/Vector.svg" alt="" /></a> ADD TO CART
+                    </button>
+                  </div>
+                  <div class="love">
+                    <a><i class="fa-regular fa-heart"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- second row -->
+
+          <!-- third row -->
+
+          <div class="row-3" id="row">
+            <div class="product all female-labcoat">
+              <div class="entire-prod-row1">20 % off</div>
+              <div class="entire-prod-row2">
+                <div class="image-product">
+                  <img src="./src/face.png" alt="" />
+
+                  <img src="/src/image.png" alt="" />
+                </div>
+              </div>
+              <div class="entire-prod-row3">
+                <h1 style="font-size: 25px">
+                  Mustwear Pro-Active Female Labcoat
+                </h1>
+                <h2>
+                  <span style="color: #555555; text-decoration: line-through"
+                    >$92.00</span
+                  >
+                  $62.00
+                </h2>
+                <div class="last-row">
+                  <div class="love">
+                    <a><i class="fa-solid fa-eye-slash"></i></a>
+                  </div>
+                  <div class="cart">
+                    <button class="add-to-cart">
+                      <a><img src="./src/Vector.svg" alt="" /></a> ADD TO CART
+                    </button>
+                  </div>
+                  <div class="love">
+                    <a><i class="fa-regular fa-heart"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="product all male-scrub">
+              <div class="entire-prod-row1" style="background-color: #82c341">
+                New
+              </div>
+              <div class="entire-prod-row2">
+                <div class="image-product">
+                  <img src="./src/imagesteth.png" alt="" />
+
+                  <img src="/src/image-1.png" alt="" />
+                </div>
+              </div>
+              <div class="entire-prod-row3">
+                <h1 style="font-size: 25px">Mustwear Pro-Active Male Scrub</h1>
+                <h2>
+                  <span style="color: #555555; text-decoration: line-through"
+                    >$105.00</span
+                  >
+                  $65.00
+                </h2>
+                <div class="last-row">
+                  <div class="love">
+                    <a><i class="fa-solid fa-eye-slash"></i></a>
+                  </div>
+                  <div class="cart">
+                    <button class="add-to-cart">
+                      <a><img src="./src/Vector.svg" alt="" /></a> ADD TO CART
+                    </button>
+                  </div>
+                  <div class="love">
+                    <a><i class="fa-regular fa-heart"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="product all male-labcoat">
+              <div class="entire-prod-row1" style="background-color: #cb2009">
+                80 % off
+              </div>
+              <div class="entire-prod-row2">
+                <div class="image-product">
+                  <img src="./src/mask.png" alt="" />
+
+                  <img src="/src/labcoat-man.png" alt="" />
+                </div>
+              </div>
+              <div class="entire-prod-row3">
+                <h1 style="font-size: 25px">
+                  Mustwear Pro-Active Male Labcoat
+                </h1>
+                <h2>
+                  <span style="color: #555555; text-decoration: line-through"
+                    >$62.00</span
+                  >
+                  $42.00
+                </h2>
+                <div class="last-row">
+                  <div class="love">
+                    <a><i class="fa-solid fa-eye-slash"></i></a>
+                  </div>
+                  <div class="cart">
+                    <button class="add-to-cart">
+                      <a><img src="./src/Vector.svg" alt="" /></a> ADD TO CART
+                    </button>
+                  </div>
+                  <div class="love">
+                    <a><i class="fa-regular fa-heart"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- third row -->
         </div>
         <!-- end of right section -->
-</div>
-
-</div>
-<!-- end of the products raw -->
+      </div>
+    </div>
+    <!-- end of the products raw -->
 
     <footer class="footer">
-        <div class="footer-container">
+      <div class="footer-container">
         <div class="footer-top">
-            <div class="footer-section">
+          <div class="footer-section">
             <h3>Company</h3>
             <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Categories</a></li>
-                <li><a href="#">Shop</a></li>
+              <li><a href="#">Home</a></li>
+              <li><a href="#">Categories</a></li>
+              <li><a href="#">Shop</a></li>
             </ul>
-            </div>
-            <div class="footer-section">
+          </div>
+          <div class="footer-section">
             <h3>Quick links</h3>
             <ul>
-                <li><a href="cart/cart.html">Cart</a></li>
-                <li><a href="whishlist/wishlist.html">Wishlst</a></li>
-                <li><a href="#">Checkout</a></li>
+              <li><a href="cart/cart.html">Cart</a></li>
+              <li><a href="whishlist/wishlist.html">Wishlst</a></li>
+              <li><a href="#">Checkout</a></li>
             </ul>
-            </div>
-            <div class="footer-section">
+          </div>
+          <div class="footer-section">
             <h3>Payment Methods</h3>
             <div class="payment-icons">
-                <img src="../assets/images/paypal.png" alt="PayPal" />
-                <img
+              <img src="../assets/images/paypal.png" alt="PayPal" />
+              <img
                 src="../assets/images/Mastercard-logo.svg.webp"
                 alt="MasterCard"
-                />
-                <img src="../assets/images/Visa_Inc._logo.svg" alt="Visa" />
+              />
+              <img src="../assets/images/Visa_Inc._logo.svg" alt="Visa" />
             </div>
-            </div>
+          </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2025 MEDICOVA. All Rights Reserved.</p>
+          <p>&copy; 2025 MEDICOVA. All Rights Reserved.</p>
         </div>
-        </div>
+      </div>
     </footer>
 
-
     <script src="/js/main.js"></script>
-</body>
+  </body>
 </html>
