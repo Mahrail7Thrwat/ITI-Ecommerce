@@ -433,3 +433,4 @@ function resetActivebutton(btn) {
   });
 }
 console.log(buttonsFilter[0].classList);
+/////////////////////////end of filter using category function////////////////////////////////
