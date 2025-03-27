@@ -20,6 +20,7 @@ function typeWriter() {
   }
 }
 window.onload = typeWriter;
+
 //////////////// start cart page////////////////////////////////
 // ********************************add to cart functions********************************
 // calling all add to cart button in prodducts page and looping over them
@@ -43,6 +44,8 @@ let addToCart = document.querySelectorAll(".add-to-cart").forEach((button) => {
   });
 });
 
+// add to cart in navar function
+
 function updateCartCount() {
   let cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
   let countCart = document.querySelector(".countCart");
@@ -50,7 +53,7 @@ function updateCartCount() {
     countCart.textContent = cartItems.length;
   }
 }
-// add to cart in navar function
+
 // ensures that we are in the cart page
 if (window.location.pathname.includes("cart.html")) {
   let cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
@@ -65,8 +68,8 @@ if (window.location.pathname.includes("cart.html")) {
 
   // if the cart is empty
   if (cartItems.length === 0) {
-    console.log("ur cart is empty");
-    header.textContent = "Your cart is Empty";
+    // console.log("ur cart is empty");
+    header.textContent = "Ur cart is Empty";
     header.style.fontSize = "50px";
     bothbuttons.style.display = "none";
   }
@@ -82,7 +85,6 @@ if (window.location.pathname.includes("cart.html")) {
   });
 
   // sets the counter of the cart Elements to be the length of the cartItems array
-
   document.querySelector(".cart-price").textContent = cartItems.length
     .toString()
     .padStart(2, "0");
@@ -110,6 +112,7 @@ if (window.location.pathname.includes("cart.html")) {
 
                   </div>
             `;
+
     // puts the Elements into the next section container
     rightSection.insertBefore(newRow, header.nextSibling.nextSibling);
 
@@ -140,7 +143,7 @@ if (window.location.pathname.includes("cart.html")) {
     let trashicon = row.querySelector(".fa-trash");
     let clearAll = document.querySelector(".clear");
 
-    // clears all Elements in the cart
+    // clear all Elements in the cart
     clearAll.onclick = function () {
       localStorage.clear();
       document.querySelector(".subtotals-title span").textContent = "$00.00";
@@ -212,6 +215,7 @@ if (window.location.pathname.includes("cart.html")) {
       if (hr && hr.tagName === "HR") row.remove();
 
       let cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
+
       cartItems.splice(index, 1);
       localStorage.setItem("cartItems", JSON.stringify(cartItems));
 
@@ -265,6 +269,7 @@ if (window.location.pathname.includes("wishlist.html")) {
   let centerSection = document.querySelector(".center-section");
   let header = document.querySelector(".row-head");
   // delete header.
+
   document.querySelectorAll(".divider").forEach((divider) => {
     divider.remove();
   });
@@ -280,6 +285,7 @@ if (window.location.pathname.includes("wishlist.html")) {
     newrow.innerHTML = `
                         <div class="details">
                                 <div class="sub-details">
+
                                     <h1 >${item.name}</h1>
                                     <h5 >${item.subDesc}</h5>
                                 </div>
@@ -360,7 +366,7 @@ if (window.location.pathname.includes("wishlist.html")) {
 
         if (wishlist.length === 0) {
           console.log("wish list is empty");
-          header.textContent = "Your Wishlist is Empty";
+          header.textContent = "ur Wishlist is Empty";
           header.style.fontSize = "50px";
           bothbuttons.style.display = "none";
         }
@@ -387,13 +393,15 @@ if (window.location.pathname.includes("wishlist.html")) {
 
 ////////////////end of wishlist page////////////////////////////////
 
-////////////////////////////////////////////////search function////////////////////////////////
+////////////////////////////////////////////////search product function////////////////////////////////
 
 function search() {
   let searchboxVal = document.getElementById("searchBox").value.toUpperCase();
   let products = document.querySelectorAll(".product");
+
   for (let i = 0; i < products.length; i++) {
     let pname = products[i].getElementsByTagName("h1")[0];
+
     if (pname) {
       let pnameValue = pname.textContent;
       if (pnameValue.toUpperCase().indexOf(searchboxVal) > -1) {
@@ -409,14 +417,17 @@ search();
 /////////////////////////start of filter using category function////////////////////////////////
 let productsFilter = document.querySelectorAll(".product");
 let buttonsFilter = document.querySelectorAll(".filter-cat");
+
 buttonsFilter.forEach((btn) => {
   btn.addEventListener("click", () => {
     showElements(btn);
   });
 });
+
 window.addEventListener("DomContentLoaded", () => {
   buttonsFilter[0].classList.add("active");
 });
+
 function showElements(btn) {
   productsFilter.forEach((item) => {
     if (item.classList.contains(btn.id)) {
