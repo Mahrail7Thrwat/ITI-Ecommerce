@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="/css/all.min.css">
+
     <link
       href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap"
       rel="stylesheet"
@@ -17,11 +19,11 @@
     <header>
       <nav class="nav">
         <div class="logo">
-          <a href="./home.html"><img src="./assets/images/logo.png" alt="" /></a>
+          <a href="../home.html"><img src="./src/logo.png" alt="" /></a>
         </div>
         <ul>
           <li>
-            <a href="./home.html">Home</a>
+            <a href="home.html">Home</a>
           </li>
 
           <li>
@@ -29,31 +31,31 @@
           </li>
 
           <li>
-            <a href="../products.html">Products</a>
+            <a href="products/products.html">Products</a>
           </li>
-         
         </ul>
         <div class="nav-icons">
           <ul>
             <li>
-              <a href="">
-                <img src="./assets/images/search.png" alt="" />
+              <a href="./products/products.html">
+                <i class="fa-solid fa-magnifying-glass"></i>    
               </a>
             </li>
             <li>
               <a href="./login.html">
-                <img src="./assets/images/user.png" alt="" />
+                <i class="fa-regular fa-user"></i>
               </a>
             </li>
             <li>
-              <a href="./wish-list.html">
-                <img src="./assets/images/wishList.png" alt="" />
+              <a href="whishlist/wishlist.html">
+                <i class="fa-regular fa-heart"></i>
               </a>
             </li>
             <li>
-              <a href="./cart.html">
-                <img src="./assets/images/cart.png" alt="" />
-              </a>
+              <div class="cartCount">
+                <div class="iconCart"><a target="_blank" href="./cart/cart.html"><img src="./src/bag.svg" alt=""></a></div>
+                <div class="countCart">0</div>
+            </div>
             </li>
           </ul>
         </div>

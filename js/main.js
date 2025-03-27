@@ -256,7 +256,7 @@ let lovebtn = document.querySelectorAll(".fa-heart").forEach((btn) => {
     let name = document.querySelector("h1").textContent;
     let subDesc = document.querySelector("h5").textContent;
     let price = document.querySelector("h2").childNodes[1].textContent.trim();
-
+    console.log(price);
     let wishlist = JSON.parse(localStorage.getItem("wishlist")) || [];
     wishlist.push({ name, subDesc, price });
     localStorage.setItem("wishlist", JSON.stringify(wishlist));
@@ -264,7 +264,7 @@ let lovebtn = document.querySelectorAll(".fa-heart").forEach((btn) => {
 });
 
 if (window.location.pathname.includes("wishlist.html")) {
-  let wishlist = JSON.parse(localStorage.getItem("wishlist"));
+  let wishlist = JSON.parse(localStorage.getItem("wishlist")) || [];
 
   let centerSection = document.querySelector(".center-section");
   let header = document.querySelector(".row-head");
